@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 namespace Lithium_Balance.Views
 {
     /// <summary>
-    /// Interaction logic for AddCustomerDialog.xaml
+    /// Interaction logic for UpdateOrder.xaml
     /// </summary>
-    public partial class AddCustomerDialog : Window
+    public partial class UpdateOrderDialog : Window
     {
-        public AddCustomerDialog()
+        public UpdateOrderDialog()
         {
             InitializeComponent();
         }
-
-
     }
 }

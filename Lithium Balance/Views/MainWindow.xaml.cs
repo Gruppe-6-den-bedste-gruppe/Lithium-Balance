@@ -28,13 +28,51 @@ namespace Lithium_Balance.Views
             InitializeComponent();
         }
 
-        private void RegistreOrdre_Click(object sender, RoutedEventArgs e)
+       
+        private void AddCustomer_Click(object sender, RoutedEventArgs e)
         {
             AddCustomerDialog dialog = new();
+
+            dialog.ShowDialog();
+        }
+
+        private void AddBMS_Click(object sender, RoutedEventArgs e)
+        {
+            AddBMSDialog dialog = new();
+
+            dialog.ShowDialog();
+        }
+
+        private void AddSoftware_Click(object sender, RoutedEventArgs e)
+        {
+            AddSoftwareDialog dialog = new();
+
+            dialog.ShowDialog();
+        }
+
+
+        private void AddOrder_Click(object sender, RoutedEventArgs e)
+        {
+            AddOrderDialog dialog = new();
 
             dialog.ShowDialog();
 
 
         }
+
+        private void UpdateOrder_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateOrderDialog dialog = new();
+
+            dialog.ShowDialog();
+             
+        }
+
+        //private void DeleteOrder_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DeleteOrderDialog dialog = new();
+
+        //    dialog.ShowDialog();
+        //}
     }
 }

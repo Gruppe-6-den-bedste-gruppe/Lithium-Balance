@@ -18,11 +18,21 @@ namespace Lithium_Balance.Views
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class NewOrderDialog : Window
+    public partial class AddOrderDialog : Window
     {
-        public NewOrderDialog()
+        public AddOrderDialog()
         {
             InitializeComponent();
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }
