@@ -14,13 +14,56 @@
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
     </Window.Resources>
-    <DockPanel Width="130" DockPanel.Dock="Right">
-        <StackPanel>
-            <Button Click="RegistreOrdre_Click" Width="100" Height="80">
-                <StackPanel>
-                    <TextBlock Text="Tilføj" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-        </StackPanel>
+    <DockPanel Margin="10">
+        <DockPanel Width="130" DockPanel.Dock="Right">
+            <StackPanel>
+                <Button Click="RegisterOrder_Click" Width="100" Height="80">
+                    <StackPanel>
+                        <TextBlock Text="Tilføj" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Click="Update_Click" Width="100" Height="80">
+                    <StackPanel>
+                        <TextBlock Text="Update" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Click="Delete_Click" Width="100" Height="80">
+                    <StackPanel>
+                        <TextBlock Text="Slet" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel Width="130" DockPanel.Dock="Left">
+            <StackPanel>
+                <Button Click="Order_Click" Width="100" Height="80">
+                    <StackPanel>
+                        <TextBlock Text="Ordre" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Click="Customer_Click" Width="100" Height="80">
+                    <StackPanel>
+                        <TextBlock Text="Kunde" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Click="BMS_Click" Width="100" Height="80">
+                    <StackPanel>
+                        <TextBlock Text="BMS" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button Click="Software_Click" Width="100" Height="80">
+                    <StackPanel>
+                        <TextBlock Text="Software" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Stretch">
+            <ListBox>
+
+            </ListBox>
+        </DockPanel>
     </DockPanel>
+
+
 </Window>
