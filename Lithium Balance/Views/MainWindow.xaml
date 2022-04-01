@@ -1,12 +1,26 @@
-﻿<Window x:Class="Lithium_Balance.MainWindow"
+﻿<Window x:Class="Lithium_Balance.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Lithium_Balance"
+        xmlns:local="clr-namespace:Lithium_Balance.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel Width="130" DockPanel.Dock="Right">
+        <StackPanel>
+            <Button Click="RegistreOrdre_Click" Width="100" Height="80">
+                <StackPanel>
+                    <TextBlock Text="Tilføj" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </DockPanel>
 </Window>
