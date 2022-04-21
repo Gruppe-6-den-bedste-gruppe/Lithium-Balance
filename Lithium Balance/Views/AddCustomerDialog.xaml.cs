@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lithium_Balance.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,11 +20,22 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddCustomerDialog : Window
     {
+        public Customer newCustomer = new();
+        
         public AddCustomerDialog()
         {
             InitializeComponent();
         }
 
+        public void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
+
+        public void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
 
     }
 }

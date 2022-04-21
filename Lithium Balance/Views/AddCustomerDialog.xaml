@@ -15,5 +15,9 @@
             <Label Content="Email"/>
             <TextBox Text="{Binding Email}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
+        <DockPanel HorizontalAlignment="Right">
+            <Button Name="SaveButton" Content="Gem" Width="70" Height="23" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Annullér" Width="70" Height="23" Margin="5" Click="CancelButton_Click"/>
+        </DockPanel>
     </StackPanel>
 </Window>
