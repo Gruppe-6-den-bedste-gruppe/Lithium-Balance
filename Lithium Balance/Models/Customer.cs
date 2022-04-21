@@ -5,25 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using Lithium_Balance.Views;
 using Lithium_Balance.Models;
-using WPFMainWindow.Models;
 
 namespace Lithium_Balance.Models
 {
-    public class Customer : IPersistable
+    public class Customer
     {
         public string Email { get; set; }
-        public string Name { get; set; }
+        public string CompanyName { get; set; }
 
-        public void Parse(string line)
+        public Customer(string email, string name)
         {
-            string[] data = line.Split(';');
-            Email = data[0];
-            Name = data[1];
+            Email = email;
+            CompanyName = name;
         }
 
         public string Format()
         {
-            return $"{Email};{Name}";
+            return $"{Email};{CompanyName}";
         }
         
     }

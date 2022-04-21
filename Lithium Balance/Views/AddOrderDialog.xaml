@@ -32,6 +32,10 @@
             <TextBox Text="{Binding Email}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
+            <Label Content="Dato"/>
+            <TextBox Text="{Binding OrderDate}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+        </DockPanel>
+        <DockPanel>
             <Label Content="BMS Type"/>
             <ComboBox Width="120" Margin="5" HorizontalAlignment="Right" SelectedIndex="{Binding BMSType}">
                 <ComboBoxItem Content="s-BMS"/>

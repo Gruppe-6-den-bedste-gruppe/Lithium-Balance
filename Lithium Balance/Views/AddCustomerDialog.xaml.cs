@@ -20,7 +20,6 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddCustomerDialog : Window
     {
-        public Customer newCustomer = new();
         
         public AddCustomerDialog()
         {
