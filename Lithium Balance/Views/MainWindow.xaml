@@ -23,7 +23,7 @@
             </TabItem.Header>
             <DockPanel>
                 <DockPanel HorizontalAlignment="Stretch">
-                    <DataGrid ItemsSource="{Binding Order }" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Margin="10" AutoGenerateColumns="False" HeadersVisibility="Column">
+                    <DataGrid ItemsSource="{Binding Order }" Background="LightGray" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Margin="10" AutoGenerateColumns="False" HeadersVisibility="Column">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn Header="Order Nr" Width="*" IsReadOnly="True" CanUserReorder="False">
                                 <DataGridTemplateColumn.CellTemplate>
