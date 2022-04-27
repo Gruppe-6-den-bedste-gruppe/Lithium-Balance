@@ -68,6 +68,19 @@ namespace Lithium_Balance.Views
              
         }
 
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            DatabaseHandler databaseHandler = new();
+            databaseHandler.GetOrderInfo();
+        }
+
+
+
         //private void DeleteOrder_Click(object sender, RoutedEventArgs e)
         //{
         //    DeleteOrderDialog dialog = new();

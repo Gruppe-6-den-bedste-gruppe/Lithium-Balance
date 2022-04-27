@@ -38,15 +38,15 @@ namespace Lithium_Balance.Models
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT OrderNO, Date, CopmanyName, Receiver, Email, BMSType, SoftwareVersion, LicensDuration FROM Order", connection);
+                SqlCommand command = new SqlCommand("SELECT OrderNo, Date, CompanyName, Receiver, Email, BMSType, SoftwareVersion, LicensDuration FROM Order", connection);
                 using (SqlDataReader dr = command.ExecuteReader())
                 {
                     while (dr.Read())
                     {
                         Order order = new Order();
-                        order.OrderNumber = dr["OrderNO"].ToString();
+                        order.OrderNumber = dr["OrderNo"].ToString();
                         order.OrderDate = DateTime.Parse(dr["Date"].ToString());
-                        order.CompanyName = dr["CopmanyName"].ToString();
+                        order.CompanyName = dr["CompanyName"].ToString();
                         order.Receiver = dr["Receiver"].ToString();
                         order.Email = dr["Email"].ToString();
                         order.BMSType = dr["BMSType"].ToString();

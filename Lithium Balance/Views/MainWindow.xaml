@@ -22,14 +22,15 @@
                 </StackPanel>
             </TabItem.Header>
             <DockPanel>
-                <DockPanel HorizontalAlignment="Stretch">
-                    <DataGrid ItemsSource="{Binding SKAL_STÅ_NOGET_HER }" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Margin="10" AutoGenerateColumns="False" HeadersVisibility="Column">
+                <DockPanel>
+                    <Button x:Name="Update" Content="Update" Width="50" Height="50" Click="Update_Click"/>
+                    <DataGrid ItemsSource="{Binding Orders }" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Margin="10" AutoGenerateColumns="False" HeadersVisibility="Column" SelectionChanged="DataGrid_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn Header="Order Nr" Width="*" IsReadOnly="True" CanUserReorder="False">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel>
-                                            <Label Content="{Binding Order}"/>
+                                            <Label Content="{Binding OrderNumber}"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -38,7 +39,7 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel>
-                                            <Label Content="{Binding Date}"/>
+                                            <Label Content="{Binding OrderDate}"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -111,35 +112,6 @@
                                     <DataTemplate>
                                         <StackPanel>
                                             <Label Content="{Binding LicensDuration}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <StackPanel Margin="5" Visibility="{Binding IsNull..., Converter={StaticResource visibilityConverter}}">
-                                                <Button Click="AddOrder_Click">
-                                                    <DockPanel>
-                                                        
-                                                        <Label VerticalAlignment="Center" FontSize="10" Content="Ny"/>
-                                                    </DockPanel>
-                                                </Button>
-                                            </StackPanel>
-                                            <StackPanel Margin="5" Visibility="{Binding IsReal..., Converter={StaticResource visibilityConverter}}">
-                                                <Button Click="UpdateOrder_Click">
-                                                    <DockPanel>
-                                                        
-                                                        <Label VerticalAlignment="Center" FontSize="10" Content="Ret"/>
-                                                    </DockPanel>
-                                                </Button>
-
-
-
-
-
-                                            </StackPanel>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
