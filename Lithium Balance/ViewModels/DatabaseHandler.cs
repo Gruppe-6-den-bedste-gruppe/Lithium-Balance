@@ -4,15 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Lithium_Balance.Models;
+using System.Collections.ObjectModel;
 
 
 
 
-namespace Lithium_Balance.Models
+
+namespace Lithium_Balance.ViewModels
 {
     public class DatabaseHandler
     {
-        public List<Order> Orders = new List<Order>();
+        public List<Order> OrdersList = new();
+        
+
         private string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
 
         public bool IsDbConnected()
@@ -44,8 +49,8 @@ namespace Lithium_Balance.Models
                     while (dr.Read())
                     {
                         Order order = new Order();
-                        order.OrderNumber = dr["OrderNo"].ToString();
-                        order.OrderDate = DateTime.Parse(dr["Date"].ToString());
+                        order.OrderNumber = (int)dr["OrderNo"];
+                        order.OrderDate = (DateTime)(dr["Date"]);
                         order.CompanyName = dr["CompanyName"].ToString();
                         order.Receiver = dr["Receiver"].ToString();
                         order.Email = dr["Email"].ToString();
@@ -53,12 +58,12 @@ namespace Lithium_Balance.Models
                         order.SoftwareVersion = dr["SoftwareVersion"].ToString();
                         order.LicensDuration = dr["LicenseDuration"].ToString();
 
-                        Orders.Add(order);
+                        OrdersList.Add(order);
 
                     }
                 }
             }
-            return Orders;
+            return OrdersList;
         }
         public void SaveOrder(Order order)
         {

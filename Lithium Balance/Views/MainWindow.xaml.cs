@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Lithium_Balance.Models;
 using Lithium_Balance.Views;
+using Lithium_Balance.ViewModels;
 using System.IO;
 
 namespace Lithium_Balance.Views
@@ -22,10 +23,14 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly DatabaseHandler mvm;
 
         public MainWindow()
-        {       
+        {
+            mvm = new DatabaseHandler();
             InitializeComponent();
+            DataContext = mvm;
+            Orders.ItemsSource = mvm.OrdersList;
         }
 
        
@@ -75,8 +80,15 @@ namespace Lithium_Balance.Views
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            DatabaseHandler databaseHandler = new();
-            databaseHandler.GetOrderInfo();
+           
+
+        }
+
+        private void Update_Click_1(object sender, RoutedEventArgs e)
+        {
+            mvm.GetOrderInfo();
+
+
         }
 
 

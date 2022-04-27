@@ -21,105 +21,31 @@
                     <Label HorizontalAlignment="Center" FontSize="10" Content="Ordre"/>
                 </StackPanel>
             </TabItem.Header>
-            <DockPanel>
-                <DockPanel>
-                    <Button x:Name="Update" Content="Update" Width="50" Height="50" Click="Update_Click"/>
-                    <DataGrid ItemsSource="{Binding Orders }" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Margin="10" AutoGenerateColumns="False" HeadersVisibility="Column" SelectionChanged="DataGrid_SelectionChanged">
-                        <DataGrid.Columns>
-                            <DataGridTemplateColumn Header="Order Nr" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding OrderNumber}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Dato" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding OrderDate}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Firma navn" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding CompanyName}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Modtager" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding Receiver}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Email" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding Email}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="File Status" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding FileStatus}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="BMS type" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding BMSType}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Software type" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding SoftwareType}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Software version" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding SoftwareVersion}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Licens varighed" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding LicensDuration}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </DockPanel>
-            </DockPanel>
+            <Grid>
+                <ListView Margin="10" x:Name="Orders">
+                    <ListView.View>
+                        <GridView>
+                            <!--<TextBlock Text="{Binding OrderNo}" />
+                                <TextBlock Text="{Binding Date}" />
+                                -->
+                                <GridViewColumn Header="Company Name" Width="120" DisplayMemberBinding="{Binding CompanyName}" />
+                                
+                                <GridViewColumn Header="Receiver" Width="120" DisplayMemberBinding="{Binding Receiver}" />
+                                
+                                <GridViewColumn Header="Email" Width="120" DisplayMemberBinding="{Binding Email}" />
+                                
+                                <GridViewColumn Header="BMS Type" Width="120" DisplayMemberBinding="{Binding BMSType}" />
+                                
+                                <GridViewColumn Header="Software Type" Width="120" DisplayMemberBinding="{Binding SoftwareType}" />
+                                
+                                <GridViewColumn Header="Software Version" Width="120" DisplayMemberBinding="{Binding SoftwareVersion}" />
+
+                            <GridViewColumn Header="License Duration" Width="120" DisplayMemberBinding="{Binding LicenseDuration}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button x:Name="Update" Content="Update" Width="50" Height="50" HorizontalAlignment="Left" Click="Update_Click_1"/>
+            </Grid>
         </TabItem>
         <TabItem>
             <TabItem.Header>
