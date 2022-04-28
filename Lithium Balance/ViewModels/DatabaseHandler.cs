@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Lithium_Balance.Models;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 
 
@@ -13,12 +14,32 @@ using System.Collections.ObjectModel;
 
 namespace Lithium_Balance.ViewModels
 {
-    public class DatabaseHandler
+    public class DatabaseHandler : INotifyPropertyChanged
     {
         public List<Order> OrdersList = new();
-        
+        public ObservableCollection<Order> OrdersCollection = new();
+
+
+        public DatabaseHandler()
+        {
+            OrdersCollection = new ObservableCollection<Order>(OrdersList);
+            for (int i = 0; i < OrdersList.Count; i++)
+            {
+                OrdersCollection.Add(new Order(OrdersList[i]));
+            }
+            OrdersCollection.Add(new Order(null));
+        }
+
 
         private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(ObservableCollection<Order> orders)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OrdersCollection)));
+        }
+
 
         public bool IsDbConnected()
         {

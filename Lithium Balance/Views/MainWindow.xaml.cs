@@ -30,7 +30,7 @@ namespace Lithium_Balance.Views
             mvm = new DatabaseHandler();
             InitializeComponent();
             DataContext = mvm;
-            Orders.ItemsSource = mvm.OrdersList;
+            Orders.ItemsSource = mvm.OrdersCollection;
             mvm.GetOrderInfo();
         }
 
@@ -87,7 +87,8 @@ namespace Lithium_Balance.Views
 
         private void Update_Click_1(object sender, RoutedEventArgs e)
         {
-            //mvm.GetOrderInfo();
+            mvm.GetOrderInfo();
+            
 
 
         }

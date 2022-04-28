@@ -8,6 +8,8 @@ namespace Lithium_Balance.Models
 {
     public class Order
     {
+        private Order order;
+
         public int  OrderNumber { get; set; }
         public string CompanyName { get; set; }
         public string Receiver { get; set; }
