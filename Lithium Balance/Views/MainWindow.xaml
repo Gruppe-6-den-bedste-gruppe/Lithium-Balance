@@ -18,7 +18,7 @@
         <TabItem>
             <TabItem.Header>
                 <StackPanel Width="70" Margin="5">
-                    <Label HorizontalAlignment="Center" FontSize="10" Content="Ordre"/>
+                    <Label HorizontalAlignment="Center" FontSize="10" Content="Order"/>
                 </StackPanel>
             </TabItem.Header>
             <Grid>
