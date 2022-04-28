@@ -11,7 +11,7 @@ namespace Lithium_Balance.Models
         public int  OrderNumber { get; set; }
         public string CompanyName { get; set; }
         public string Receiver { get; set; }
-        public string LicensDuration { get; set; }
+        public string LicenseDuration { get; set; }
         public DateTime OrderDate { get; set; }
         public string Email { get; set; }
         public string BMSType { get; set; }

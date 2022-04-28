@@ -18,22 +18,20 @@ namespace Lithium_Balance.ViewModels
         public List<Order> OrdersList = new();
         
 
-        private string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
+        private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
 
         public bool IsDbConnected()
         {
             string connectionStringLowTimeout = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06;Connect Timeout=1";
-            using (SqlConnection con = new SqlConnection(connectionStringLowTimeout))
+            using SqlConnection con = new SqlConnection(connectionStringLowTimeout);
+            try
             {
-                try
-                {
-                    con.Open();
-                    return true;
-                }
-                catch (SqlException)
-                {
-                    return false;
-                }
+                con.Open();
+                return true;
+            }
+            catch (SqlException)
+            {
+                return false;
             }
         }
 
@@ -56,7 +54,7 @@ namespace Lithium_Balance.ViewModels
                         order.Email = dr["Email"].ToString();
                         order.BMSType = dr["BMSType"].ToString();
                         order.SoftwareVersion = dr["SoftwareVersion"].ToString();
-                        order.LicensDuration = dr["LicenseDuration"].ToString();
+                        order.LicenseDuration = dr["LicenseDuration"].ToString();
 
                         OrdersList.Add(order);
 
@@ -79,7 +77,7 @@ namespace Lithium_Balance.ViewModels
                 command.Parameters.AddWithValue("@Email", order.Email);
                 command.Parameters.AddWithValue("@BMSTYpe", order.BMSType);
                 command.Parameters.AddWithValue("@SoftwareVersion", order.SoftwareVersion);
-                command.Parameters.AddWithValue("@LicensDuration", order.LicensDuration);
+                command.Parameters.AddWithValue("@LicensDuration", order.LicenseDuration);
 
                 connection.Close();
 

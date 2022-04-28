@@ -25,20 +25,19 @@
                 <ListView Margin="10" x:Name="Orders">
                     <ListView.View>
                         <GridView>
-                            <!--<TextBlock Text="{Binding OrderNo}" />
-                                <TextBlock Text="{Binding Date}" />
-                                -->
-                                <GridViewColumn Header="Company Name" Width="120" DisplayMemberBinding="{Binding CompanyName}" />
+                            <GridViewColumn Header="Order Number" Width="120" DisplayMemberBinding="{Binding OrderNo}" />
+                            
+                            <GridViewColumn Header="Company Name" Width="120" DisplayMemberBinding="{Binding CompanyName}" />
                                 
-                                <GridViewColumn Header="Receiver" Width="120" DisplayMemberBinding="{Binding Receiver}" />
+                            <GridViewColumn Header="Receiver" Width="120" DisplayMemberBinding="{Binding Receiver}" />
                                 
-                                <GridViewColumn Header="Email" Width="120" DisplayMemberBinding="{Binding Email}" />
+                            <GridViewColumn Header="Email" Width="120" DisplayMemberBinding="{Binding Email}" />
                                 
-                                <GridViewColumn Header="BMS Type" Width="120" DisplayMemberBinding="{Binding BMSType}" />
+                            <GridViewColumn Header="BMS Type" Width="120" DisplayMemberBinding="{Binding BMSType}" />
                                 
-                                <GridViewColumn Header="Software Type" Width="120" DisplayMemberBinding="{Binding SoftwareType}" />
+                            <GridViewColumn Header="Software Type" Width="120" DisplayMemberBinding="{Binding SoftwareType}" />
                                 
-                                <GridViewColumn Header="Software Version" Width="120" DisplayMemberBinding="{Binding SoftwareVersion}" />
+                            <GridViewColumn Header="Software Version" Width="120" DisplayMemberBinding="{Binding SoftwareVersion}" />
 
                             <GridViewColumn Header="License Duration" Width="120" DisplayMemberBinding="{Binding LicenseDuration}" />
                         </GridView>
