@@ -19,7 +19,7 @@ namespace Lithium_Balance.Models
         public Repository(string path)
         {
             this.path = path;
-            Instance = this;
+            Instance = this
             Load();
         }
 

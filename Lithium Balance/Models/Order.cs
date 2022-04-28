@@ -10,7 +10,7 @@ namespace Lithium_Balance.Models
     {
         private Order order;
 
-        public int  OrderNumber { get; set; }
+        public int OrderNumber { get; set; }
         public string CompanyName { get; set; }
         public string Receiver { get; set; }
         public string LicenseDuration { get; set; }
@@ -19,5 +19,23 @@ namespace Lithium_Balance.Models
         public string BMSType { get; set; }
         public string SoftwareType { get; set; }
         public string SoftwareVersion { get; set; }
+
+        public void Parse(string line)
+        {
+            string[] data = line.Split(';');
+            OrderNumber = int.Parse(data[0]);
+            CompanyName = data[1];
+            Receiver = data[2];
+            LicenseDuration = data[3];
+            OrderDate = DateTime.Parse(data[4]);
+            Email = data[5];
+            BMSType = data[6];
+            SoftwareVersion = data[7];
+        }
+
+        public string Format()
+        {
+            return $"{OrderNumber};{CompanyName};{Receiver};{LicenseDuration};{OrderDate};{Email};{BMSType};{SoftwareVersion}";
+        }
     }
 }
