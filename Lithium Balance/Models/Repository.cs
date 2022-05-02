@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Lithium_Balance.Views;
 using Lithium_Balance.Models;
-using WPFMainWindow.Models;
 using System.IO;
 
 namespace Lithium_Balance.Models
@@ -15,11 +14,10 @@ namespace Lithium_Balance.Models
         public List<T> List { get; protected set; }
         public static Repository<T> Instance { get; private set; }
         private readonly string path;
-
         public Repository(string path)
         {
             this.path = path;
-            Instance = this
+            Instance = this;
             Load();
         }
 

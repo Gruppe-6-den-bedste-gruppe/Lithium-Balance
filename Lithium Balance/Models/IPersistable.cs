@@ -1,4 +1,4 @@
-﻿namespace WPFMainWindow.Models
+﻿namespace Lithium_Balance.Models
 {
     public interface IPersistable
     {

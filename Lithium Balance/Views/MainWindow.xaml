@@ -47,76 +47,20 @@
         <TabItem>
             <TabItem.Header>
                 <StackPanel Width="70" Margin="5">
-                    <Label HorizontalAlignment="Center" FontSize="10" Content="Kunde"/>
+                    <Label HorizontalAlignment="Center" FontSize="10" Content="Customers"/>
                 </StackPanel>
             </TabItem.Header>
-            <DockPanel>
-                <DockPanel HorizontalAlignment="Stretch">
-                    <DataGrid ItemsSource="{Binding Order}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Margin="10" AutoGenerateColumns="False" HeadersVisibility="Column">
-                        <DataGrid.Columns>
-                            <DataGridTemplateColumn Header="Order Nr" Width="*" IsReadOnly="True" CanUserReorder="False">
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Dato" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding Date}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Firma navn" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding CompanyName}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Email" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding Email}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-        
-                            <DataGridTemplateColumn Header="">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <StackPanel Margin="5" Visibility="{Binding IsNullOrder, Converter={StaticResource visibilityConverter}}">
-                                                <Button Click="AddOrder_Click">
-                                                    <DockPanel>
-                                                        <Image Width="20" Source="https://iconarchive.com/download/i80210/custom-icon-design/flatastic-1/add.ico"/>
-                                                        <Label VerticalAlignment="Center" FontSize="10" Content="Ny"/>
-                                                    </DockPanel>
-                                                </Button>
-                                            </StackPanel>
-                                            <StackPanel Margin="5" Visibility="{Binding IsRealOrder, Converter={StaticResource visibilityConverter}}">
-                                                <Button Click="UpdateOrder_Click">
-                                                    <DockPanel>
-                                                        <Image Width="20" Source="https://icons.veryicon.com/png/o/miscellaneous/icon-8/another-change-4.png"/>
-                                                        <Label VerticalAlignment="Center" FontSize="10" Content="Ret"/>
-                                                    </DockPanel>
-                                                </Button>
-
-
-
-
-
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </DockPanel>
-            </DockPanel>
+            <Grid>
+                <ListView Margin="10" Name="Customers">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Date"  Width="120" DisplayMemberBinding="{Binding Date}"/>
+                            <GridViewColumn Header="Company Name"  Width="120" DisplayMemberBinding="{Binding CompanyName}"/>
+                            <GridViewColumn Header="Email"  Width="120" DisplayMemberBinding="{Binding Email}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
         </TabItem>
         <TabItem>
             <TabItem.Header>
@@ -124,55 +68,16 @@
                     <Label HorizontalAlignment="Center" FontSize="10" Content="BMS"/>
                 </StackPanel>
             </TabItem.Header>
-            <DockPanel>
-                <DockPanel HorizontalAlignment="Stretch">
-                    <DataGrid ItemsSource="{Binding Order}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Margin="10" AutoGenerateColumns="False" HeadersVisibility="Column">
-                        <DataGrid.Columns>
-                            <DataGridTemplateColumn Header="Type" Width="*" IsReadOnly="True" CanUserReorder="False">
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Version" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding Date}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                           
-                            <DataGridTemplateColumn Header="">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <StackPanel Margin="5" Visibility="{Binding IsNullOrder, Converter={StaticResource visibilityConverter}}">
-                                                <Button Click="AddOrder_Click">
-                                                    <DockPanel>
-                                                        <Image Width="20" Source="https://iconarchive.com/download/i80210/custom-icon-design/flatastic-1/add.ico"/>
-                                                        <Label VerticalAlignment="Center" FontSize="10" Content="Ny"/>
-                                                    </DockPanel>
-                                                </Button>
-                                            </StackPanel>
-                                            <StackPanel Margin="5" Visibility="{Binding IsRealOrder, Converter={StaticResource visibilityConverter}}">
-                                                <Button Click="UpdateOrder_Click">
-                                                    <DockPanel>
-                                                        <Image Width="20" Source="https://icons.veryicon.com/png/o/miscellaneous/icon-8/another-change-4.png"/>
-                                                        <Label VerticalAlignment="Center" FontSize="10" Content="Ret"/>
-                                                    </DockPanel>
-                                                </Button>
-
-
-
-
-
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </DockPanel>
-            </DockPanel>
+            <Grid>
+                <ListView Name="BMS" Margin="10">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="BMS Type"  Width="120" DisplayMemberBinding="{Binding BMSType}"/>
+                            <GridViewColumn Header="Software Version"  Width="120" DisplayMemberBinding="{Binding SoftwareVersion}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
         </TabItem>
         <TabItem>
             <TabItem.Header>
@@ -180,64 +85,16 @@
                     <Label HorizontalAlignment="Center" FontSize="10" Content="Software"/>
                 </StackPanel>
             </TabItem.Header>
-            <DockPanel>
-                <DockPanel HorizontalAlignment="Stretch">
-                    <DataGrid ItemsSource="{Binding Software}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Margin="10" AutoGenerateColumns="False" HeadersVisibility="Column">
-                        <DataGrid.Columns>
-                            <DataGridTemplateColumn Header="Type" Width="*" IsReadOnly="True" CanUserReorder="False">
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Version" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding SoftwareVersion}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Licens varighed" Width="*" IsReadOnly="True" CanUserReorder="False">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <Label Content="{Binding LicensDuration}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-
-                            <DataGridTemplateColumn Header="">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <StackPanel Margin="5" Visibility="{Binding IsNullOrder, Converter={StaticResource visibilityConverter}}">
-                                                <Button Click="AddOrder_Click">
-                                                    <DockPanel>
-                                                        <Image Width="20" Source="https://iconarchive.com/download/i80210/custom-icon-design/flatastic-1/add.ico"/>
-                                                        <Label VerticalAlignment="Center" FontSize="10" Content="Ny"/>
-                                                    </DockPanel>
-                                                </Button>
-                                            </StackPanel>
-                                            <StackPanel Margin="5" Visibility="{Binding IsRealOrder, Converter={StaticResource visibilityConverter}}">
-                                                <Button Click="UpdateOrder_Click">
-                                                    <DockPanel>
-                                                        <Image Width="20" Source="https://icons.veryicon.com/png/o/miscellaneous/icon-8/another-change-4.png"/>
-                                                        <Label VerticalAlignment="Center" FontSize="10" Content="Ret"/>
-                                                    </DockPanel>
-                                                </Button>
-
-
-
-
-
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </DockPanel>
-            </DockPanel>
+            <Grid>
+                <ListView Name="Software" Margin="10">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Software Version"  Width="120" DisplayMemberBinding="{Binding BMSType}"/>
+                            <GridViewColumn Header="License Duration"  Width="120" DisplayMemberBinding="{Binding SoftwareVersion}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
         </TabItem>
 
     </TabControl>

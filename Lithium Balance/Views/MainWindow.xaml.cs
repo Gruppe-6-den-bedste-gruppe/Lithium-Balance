@@ -31,7 +31,11 @@ namespace Lithium_Balance.Views
             InitializeComponent();
             DataContext = mvm;
             Orders.ItemsSource = mvm.OrdersCollection;
-            mvm.GetOrderInfo();
+            Customers.ItemsSource = mvm.OrdersCollection;
+            BMS.ItemsSource = mvm.OrdersCollection;
+            
+
+
         }
 
        

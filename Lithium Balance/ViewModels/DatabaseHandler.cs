@@ -23,11 +23,12 @@ namespace Lithium_Balance.ViewModels
         public DatabaseHandler()
         {
             OrdersCollection = new ObservableCollection<Order>(OrdersList);
+            GetOrderInfo();
             for (int i = 0; i < OrdersList.Count; i++)
             {
-                OrdersCollection.Add(new Order(OrdersList[i]));
+                OrdersCollection.Add(OrdersList[i]);
             }
-            OrdersCollection.Add(new Order(null));
+            OrdersCollection.Add(null);
         }
 
 
@@ -69,7 +70,7 @@ namespace Lithium_Balance.ViewModels
                     {
                         Order order = new Order();
                         order.OrderNumber = (int)dr["OrderNo"];
-                        order.OrderDate = (DateTime)(dr["Date"]);
+                        order.Date = (DateTime)(dr["Date"]);
                         order.CompanyName = dr["CompanyName"].ToString();
                         order.Receiver = dr["Receiver"].ToString();
                         order.Email = dr["Email"].ToString();
@@ -92,7 +93,7 @@ namespace Lithium_Balance.ViewModels
                 SqlCommand command = new SqlCommand("INSERT INTO Order (OrderNO, Date, CopmanyName, Receiver, Email, BMSType, SoftwareVersion, LicensDuration)" +
                     "VALUES(@OrderNO, @Date, @CopmanyName, @Receiver, @Email, @BMSType, @SoftwareVersion, @LicensDuration)", connection);
                 command.Parameters.AddWithValue("@OrderNO", order.OrderNumber);
-                command.Parameters.AddWithValue("@Date", order.OrderDate);
+                command.Parameters.AddWithValue("@Date", order.Date);
                 command.Parameters.AddWithValue("@CopmanyName", order.CompanyName);
                 command.Parameters.AddWithValue("@Recevier", order.Receiver);
                 command.Parameters.AddWithValue("@Email", order.Email);

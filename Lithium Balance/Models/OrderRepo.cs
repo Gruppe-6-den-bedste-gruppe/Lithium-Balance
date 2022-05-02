@@ -10,6 +10,7 @@ namespace Lithium_Balance.Models
     {
         public OrderRepo(string path) : base(path)
         {
+            
         }
     }
 }
