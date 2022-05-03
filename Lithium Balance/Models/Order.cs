@@ -9,7 +9,7 @@ namespace Lithium_Balance.Models
     public class Order : IPersistable
     {
 
-        public int OrderNumber { get; set; }
+        public string OrderNumber { get; set; }
         public string CompanyName { get; set; }
         public string Receiver { get; set; }
         public string LicenseDuration { get; set; }
@@ -22,7 +22,7 @@ namespace Lithium_Balance.Models
         public void Parse(string line)
         {
             string[] data = line.Split(';');
-            OrderNumber = int.Parse(data[0]);
+            OrderNumber = data[0];
             CompanyName = data[1];
             Receiver = data[2];
             LicenseDuration = data[3];

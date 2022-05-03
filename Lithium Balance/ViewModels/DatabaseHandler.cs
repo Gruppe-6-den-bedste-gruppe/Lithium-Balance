@@ -69,7 +69,7 @@ namespace Lithium_Balance.ViewModels
                     while (dr.Read())
                     {
                         Order order = new Order();
-                        order.OrderNumber = (int)dr["OrderNo"];
+                        order.OrderNumber = dr["OrderNo"].ToString();
                         order.Date = (DateTime)(dr["Date"]);
                         order.CompanyName = dr["CompanyName"].ToString();
                         order.Receiver = dr["Receiver"].ToString();
