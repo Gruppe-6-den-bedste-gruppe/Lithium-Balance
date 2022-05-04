@@ -19,7 +19,7 @@ namespace Lithium_Balance.Models
         public string BMSType { get; set; }
         public string SoftwareVersion { get; set; }
 
-        public Order(int orderNumber, string companyName, string receiver, string licenseDuration, DateTime date, string email, string bmsType, string softwareVersion)
+        public Order(string orderNumber, string companyName, string receiver, string licenseDuration, DateTime date, string email, string bmsType, string softwareVersion)
         {
             OrderNumber = orderNumber;
             CompanyName = companyName;
