@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lithium_Balance.Views"
         mc:Ignorable="d"
-        Title="AddSoftwareDialog" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="AddSoftwareDialog" SizeToContent="Height" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <StackPanel Margin="5">
+        <DockPanel>
+            <Label Content="Software Type"/>
+            <TextBox Text="{Binding SoftwareType}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+        </DockPanel>
+        <DockPanel>
+            <Label Content="Software Version"/>
+            <TextBox Text="{Binding SoftwareVersion}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Right">
+            <Button x:Name="SaveButton" Content="Save" Width="70" Height="23" Margin="5" Click="SaveButton_Click"/>
+            <Button x:Name="CancelButtton" Content="Cancel" Width="70" Height="23" Margin="5" Click="CancelButton_Click"/>
+        </DockPanel>
+    </StackPanel>
 </Window>

@@ -94,6 +94,8 @@
                             <GridViewColumn Header="License Duration"  Width="120" DisplayMemberBinding="{Binding SoftwareVersion}"/>
                         </GridView>
                     </ListView.View>
+                    <Button x:Name="AddSoftware" Content="Add Order" Width="75" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="AddOrder_Click_1"/>
+
                 </ListView>
             </Grid>
         </TabItem>
