@@ -8,6 +8,7 @@ namespace Lithium_Balance.Models
 {
     public class Order : IPersistable
     {
+        private string orderNumber;
 
         public int OrderNumber { get; set; }
         public string CompanyName { get; set; }
@@ -16,8 +17,33 @@ namespace Lithium_Balance.Models
         public DateTime Date { get; set; }
         public string Email { get; set; }
         public string BMSType { get; set; }
-        public string SoftwareType { get; set; }
         public string SoftwareVersion { get; set; }
+
+        public Order(int orderNumber, string companyName, string receiver, string licenseDuration, DateTime date, string email, string bmsType, string softwareVersion)
+        {
+            OrderNumber = orderNumber;
+            CompanyName = companyName;
+            Receiver = receiver;
+            LicenseDuration = licenseDuration;
+            Date = date;
+            Email = email;
+            BMSType = bmsType;
+            SoftwareVersion = softwareVersion;
+        }
+
+        public Order(string orderNumber, string companyName, string receiver, string email, string bMSType, string softwareVersion)
+        {
+            this.orderNumber = orderNumber;
+            CompanyName = companyName;
+            Receiver = receiver;
+            Email = email;
+            BMSType = bMSType;
+            SoftwareVersion = softwareVersion;
+        }
+
+        public Order()
+        {
+        }
 
         public void Parse(string line)
         {

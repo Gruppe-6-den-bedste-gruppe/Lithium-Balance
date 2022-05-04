@@ -42,6 +42,7 @@
                     </ListView.View>
                 </ListView>
                 <Button x:Name="Update" Content="Update" Width="50" Height="50" HorizontalAlignment="Left" Click="Update_Click_1"/>
+                <Button x:Name="AddOrderButton" Content="Add Order" Width="75" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="AddOrder_Click_1"/>
             </Grid>
         </TabItem>
         <TabItem>

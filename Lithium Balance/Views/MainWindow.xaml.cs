@@ -24,6 +24,7 @@ namespace Lithium_Balance.Views
     public partial class MainWindow : Window
     {
         private readonly DatabaseHandler mvm;
+        private readonly OrderViewModel orderViewModel;
 
         public MainWindow()
         {
@@ -61,15 +62,6 @@ namespace Lithium_Balance.Views
         }
 
 
-        private void AddOrder_Click(object sender, RoutedEventArgs e)
-        {
-            AddOrderDialog dialog = new();
-
-            dialog.ShowDialog();
-
-
-        }
-
         private void UpdateOrder_Click(object sender, RoutedEventArgs e)
         {
             UpdateOrderDialog dialog = new();
@@ -95,6 +87,13 @@ namespace Lithium_Balance.Views
             
 
 
+        }
+
+        private void AddOrder_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddOrder dialog = new();
+
+            dialog.ShowDialog();
         }
 
 

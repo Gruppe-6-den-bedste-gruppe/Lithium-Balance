@@ -10,5 +10,8 @@ namespace Lithium_Balance.Models
 {
     public class Customer
     {
+        public String Name { get; set; }
+        public String Address { get; set; }
+        
     }
 }

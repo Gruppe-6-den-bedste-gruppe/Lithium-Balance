@@ -12,21 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Lithium_Balance.Views;
+using Lithium_Balance.ViewModels;
+using Lithium_Balance.Models;
 
 namespace Lithium_Balance.Views
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class AddOrderDialog : Window
+    public partial class AddOrder : Window
     {
-        public AddOrderDialog()
+        private readonly DatabaseHandler databaseHandler;
+        private readonly OrderViewModel orderViewModel;
+        
+        
+        public AddOrder()
         {
+            DataContext = orderViewModel;
             InitializeComponent();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            Order order = new Order();
+            order = orderViewModel.CreateOrder(AOOrderNumber.Text, AOCompanyName.Text, AOReceiver.Text, AOEmail.Text, AOBMSType.Text, AOSoftwareVersion.Text, AOLicenseDuration.Text);
+            databaseHandler.SaveOrder(order);
             DialogResult = true;
         }
 

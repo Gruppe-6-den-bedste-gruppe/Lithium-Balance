@@ -10,5 +10,7 @@ namespace Lithium_Balance.Models
 {
     public class BMS
     {
+        public String BMSType { get; set; }
+        public String BMSVersion { get; set; }
     }
 }

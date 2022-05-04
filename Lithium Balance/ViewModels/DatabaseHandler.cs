@@ -90,11 +90,11 @@ namespace Lithium_Balance.ViewModels
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Order (OrderNO, Date, CopmanyName, Receiver, Email, BMSType, SoftwareVersion, LicensDuration)" +
-                    "VALUES(@OrderNO, @Date, @CopmanyName, @Receiver, @Email, @BMSType, @SoftwareVersion, @LicensDuration)", connection);
-                command.Parameters.AddWithValue("@OrderNO", order.OrderNumber);
-                command.Parameters.AddWithValue("@Date", order.Date);
-                command.Parameters.AddWithValue("@CopmanyName", order.CompanyName);
+                SqlCommand command = new SqlCommand("INSERT INTO Order (OrderNo, CopmanyName, Receiver, Email, BMSType, SoftwareVersion, LicensDuration)" +
+                    "VALUES(@OrderNo, @CompanyName, @Receiver, @Email, @BMSType, @SoftwareVersion, @LicensDuration)", connection);
+                command.Parameters.AddWithValue("@OrderNo", order.OrderNumber);
+                //command.Parameters.AddWithValue("@Date", order.Date);
+                command.Parameters.AddWithValue("@CompanyName", order.CompanyName);
                 command.Parameters.AddWithValue("@Recevier", order.Receiver);
                 command.Parameters.AddWithValue("@Email", order.Email);
                 command.Parameters.AddWithValue("@BMSTYpe", order.BMSType);
