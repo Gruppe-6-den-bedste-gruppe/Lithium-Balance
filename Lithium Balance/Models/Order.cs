@@ -16,10 +16,11 @@ namespace Lithium_Balance.Models
         public string LicenseDuration { get; set; }
         public DateTime Date { get; set; }
         public string Email { get; set; }
+        public string Address { get; set; }
         public string BMSType { get; set; }
         public string SoftwareVersion { get; set; }
 
-        public Order(string orderNumber, string companyName, string receiver, string licenseDuration, DateTime date, string email, string bmsType, string softwareVersion)
+        public Order(string orderNumber, string companyName, string receiver, string licenseDuration, DateTime date, string email, string address,string bmsType, string softwareVersion)
         {
             OrderNumber = orderNumber;
             CompanyName = companyName;
@@ -27,6 +28,7 @@ namespace Lithium_Balance.Models
             LicenseDuration = licenseDuration;
             Date = date;
             Email = email;
+            Address = address;
             BMSType = bmsType;
             SoftwareVersion = softwareVersion;
         }
@@ -54,13 +56,14 @@ namespace Lithium_Balance.Models
             LicenseDuration = data[3];
             Date = DateTime.Parse(data[4]);
             Email = data[5];
-            BMSType = data[6];
-            SoftwareVersion = data[7];
+            Address = data[6];
+            BMSType = data[7];
+            SoftwareVersion = data[8];
         }
 
         public string Format()
         {
-            return $"{OrderNumber};{CompanyName};{Receiver};{LicenseDuration};{Date};{Email};{BMSType};{SoftwareVersion}";
+            return $"{OrderNumber};{CompanyName};{Receiver};{LicenseDuration};{Date};{Email};{Address};{BMSType};{SoftwareVersion}";
         }
     }
 }
