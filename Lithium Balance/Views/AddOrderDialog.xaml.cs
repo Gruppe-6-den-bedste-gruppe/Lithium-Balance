@@ -35,7 +35,7 @@ namespace Lithium_Balance.Views
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             Order order = new Order();
-            order = orderViewModel.CreateOrder(AOOrderNumber.Text, AOCompanyName.Text, AOReceiver.Text, AOEmail.Text, AOBMSType.Text, AOSoftwareVersion.Text, AOLicenseDuration.Text);
+            order = orderViewModel.CreateOrder(AOOrderNumber.Text, AOCompanyName.Text, AOReceiver.Text, AOEmail.Text, AOBMSType.Text, AOSoftwareVersion.Text,AOSoftwareType.Text, AOLicenseDuration.Text);
             databaseHandler.SaveOrder(order);
             DialogResult = true;
         }
