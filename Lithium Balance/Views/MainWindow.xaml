@@ -18,7 +18,7 @@
         <TabItem>
             <TabItem.Header>
                 <StackPanel Width="70" Margin="5">
-                    <Label HorizontalAlignment="Center" FontSize="10" Content="Ordre"/>
+                    <Label HorizontalAlignment="Center" FontSize="10" Content="Order"/>
                 </StackPanel>
             </TabItem.Header>
             <Grid>
@@ -32,6 +32,8 @@
                             <GridViewColumn Header="Receiver" Width="120" DisplayMemberBinding="{Binding Receiver}" />
                                 
                             <GridViewColumn Header="Email" Width="120" DisplayMemberBinding="{Binding Email}" />
+
+                            <GridViewColumn Header="Address" Width="120" DisplayMemberBinding="{Binding Address}"/>
 
                             <GridViewColumn Header="BMS Type" Width="120" DisplayMemberBinding="{Binding BMSType}" />
 
