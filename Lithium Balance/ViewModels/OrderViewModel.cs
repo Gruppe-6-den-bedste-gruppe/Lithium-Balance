@@ -10,9 +10,10 @@ namespace Lithium_Balance.ViewModels
     internal class OrderViewModel
     {
         private readonly Order order;
-        public Order CreateOrder(string OrderNumber, string CompanyName, string Receiver, string Email, string BMSType, string SoftwareVersion, string LicenseDuration)
+        public Order CreateOrder(string OrderNumber, string CompanyName, string Receiver, string Email, string BMSType, string SoftwareVersion, string SoftwareType, string LicenseDuration)
         {
-            Order order = new Order(OrderNumber, CompanyName, Receiver, Email, BMSType, SoftwareVersion);
+            Order order = new Order(OrderNumber, CompanyName, Receiver, Email, BMSType, SoftwareVersion, SoftwareType, LicenseDuration);
+            
             return order;
         }
         

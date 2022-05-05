@@ -19,8 +19,9 @@ namespace Lithium_Balance.Models
         public string Address { get; set; }
         public string BMSType { get; set; }
         public string SoftwareVersion { get; set; }
+        public string SoftwareType { get; set; }
 
-        public Order(string orderNumber, string companyName, string receiver, string licenseDuration, DateTime date, string email, string address,string bmsType, string softwareVersion)
+        public Order(string orderNumber, string companyName, string receiver, string licenseDuration, DateTime date, string email, string address,string bmsType, string softwareVersion, string softwareType)
         {
             OrderNumber = orderNumber;
             CompanyName = companyName;
@@ -31,16 +32,18 @@ namespace Lithium_Balance.Models
             Address = address;
             BMSType = bmsType;
             SoftwareVersion = softwareVersion;
+            SoftwareType = softwareType;
         }
 
-        public Order(string orderNumber, string companyName, string receiver, string email, string bMSType, string softwareVersion)
+        public Order(string orderNumber, string companyName, string receiver, string email, string bMSType, string softwareVersion, string softwareType, string licenseDuration)
         {
-            this.orderNumber = orderNumber;
+            OrderNumber = orderNumber;
             CompanyName = companyName;
             Receiver = receiver;
             Email = email;
             BMSType = bMSType;
             SoftwareVersion = softwareVersion;
+            SoftwareType = softwareType;
         }
 
         public Order()
@@ -59,11 +62,12 @@ namespace Lithium_Balance.Models
             Address = data[6];
             BMSType = data[7];
             SoftwareVersion = data[8];
+            SoftwareType = data[9];
         }
 
         public string Format()
         {
-            return $"{OrderNumber};{CompanyName};{Receiver};{LicenseDuration};{Date};{Email};{Address};{BMSType};{SoftwareVersion}";
+            return $"{OrderNumber};{CompanyName};{Receiver};{LicenseDuration};{Date};{Email};{Address};{BMSType};{SoftwareVersion},{SoftwareType}";
         }
     }
 }

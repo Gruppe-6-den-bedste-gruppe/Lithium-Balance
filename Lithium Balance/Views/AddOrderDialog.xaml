@@ -45,6 +45,14 @@
             </ComboBox>
         </DockPanel>
         <DockPanel>
+            <Label Content="Software Type"/>
+            <ComboBox Name="AOSoftwareType" Width="120" Margin="5" HorizontalAlignment="Right" SelectedIndex="{Binding BMSType}">
+                <ComboBoxItem Content="s-BMS"/>
+                <ComboBoxItem Content="c-BMS"/>
+                <ComboBoxItem Content="n-BMS"/>
+            </ComboBox>
+        </DockPanel>
+        <DockPanel>
             <Label Content="License Duration"/>
             <TextBox Name="AOLicenseDuration" Text="{Binding LicensDuration}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
