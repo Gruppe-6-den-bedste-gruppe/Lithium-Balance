@@ -21,7 +21,7 @@ namespace Lithium_Balance.Models
         public string SoftwareVersion { get; set; }
         public string SoftwareType { get; set; }
 
-        public Order(string orderNumber, string companyName, string receiver, string licenseDuration, DateTime date, string email, string address,string bmsType, string softwareVersion, string softwareType)
+        /*public Order(string orderNumber, string companyName, string receiver, string licenseDuration, DateTime date, string email, string address,string bmsType, string softwareVersion, string softwareType)
         {
             OrderNumber = orderNumber;
             CompanyName = companyName;
@@ -33,9 +33,9 @@ namespace Lithium_Balance.Models
             BMSType = bmsType;
             SoftwareVersion = softwareVersion;
             SoftwareType = softwareType;
-        }
+        }*/
 
-        public Order(string orderNumber, string companyName, string receiver, string email, string bMSType, string softwareVersion, string softwareType, string licenseDuration)
+        public Order(string orderNumber, string companyName, string receiver, string email, string bMSType, string softwareVersion, string softwareType, string licenseDuration, string address)
         {
             OrderNumber = orderNumber;
             CompanyName = companyName;
@@ -44,6 +44,8 @@ namespace Lithium_Balance.Models
             BMSType = bMSType;
             SoftwareVersion = softwareVersion;
             SoftwareType = softwareType;
+            LicenseDuration = licenseDuration;
+            Address = address;
         }
 
         public Order()

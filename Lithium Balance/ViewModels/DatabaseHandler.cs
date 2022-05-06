@@ -90,18 +90,22 @@ namespace Lithium_Balance.ViewModels
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO Order (OrderNo, CopmanyName, Receiver, Email, BMSType, SoftwareVersion, LicensDuration)" +
-                    "VALUES(@OrderNo, @CompanyName, @Receiver, @Email, @BMSType, @SoftwareVersion, @LicensDuration)", connection);
+                
+                SqlCommand command = new SqlCommand("INSERT INTO Orders (OrderNo, CompanyName, Receiver, Email, BMSType, SoftwareVersion, SoftwareType , LicenseDuration)" +
+                    "VALUES(@OrderNo, @CompanyName, @Receiver, @Email, @BMSType, @SoftwareVersion,@SoftwareType , @LicenseDuration)", connection);
                 command.Parameters.AddWithValue("@OrderNo", order.OrderNumber);
-                //command.Parameters.AddWithValue("@Date", order.Date);
                 command.Parameters.AddWithValue("@CompanyName", order.CompanyName);
-                command.Parameters.AddWithValue("@Recevier", order.Receiver);
+                command.Parameters.AddWithValue("@Receiver", order.Receiver);
                 command.Parameters.AddWithValue("@Email", order.Email);
                 command.Parameters.AddWithValue("@BMSTYpe", order.BMSType);
                 command.Parameters.AddWithValue("@SoftwareVersion", order.SoftwareVersion);
-                command.Parameters.AddWithValue("@LicensDuration", order.LicenseDuration);
+                command.Parameters.AddWithValue("@SoftwareType", order.SoftwareType);
+                command.Parameters.AddWithValue("@LicenseDuration", order.LicenseDuration);
+                command.Parameters.AddWithValue("@Adress", order.Address);
+                command.Parameters.AddWithValue("@Date", order.Date);
 
+                connection.Open();
+                command.ExecuteNonQuery();
                 connection.Close();
 
             }

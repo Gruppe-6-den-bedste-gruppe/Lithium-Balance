@@ -54,7 +54,14 @@
         </DockPanel>
         <DockPanel>
             <Label Content="License Duration"/>
-            <TextBox Name="AOLicenseDuration" Text="{Binding LicensDuration}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Name="AOLicenseDuration" Text="{Binding LicenseDuration}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+        </DockPanel>
+        <DockPanel>
+            <Label Content="Adress"/>
+            <TextBox Name="AOAddress" Text="{Binding Address}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+        </DockPanel>
+        <DockPanel>
+
         </DockPanel>
         <DockPanel HorizontalAlignment="Right">
             <Button x:Name="SaveButton" Content="Save" Width="70" Height="23" Margin="5" Click="SaveButton_Click"/>
