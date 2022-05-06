@@ -70,7 +70,7 @@
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="BMS Type"  Width="120" DisplayMemberBinding="{Binding BMSType}"/>
-                            <GridViewColumn Header="Software Version"  Width="120" DisplayMemberBinding="{Binding SoftwareVersion}"/>
+                            <GridViewColumn Header="BMS Version"  Width="120" DisplayMemberBinding="{Binding BMSVersion}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -86,8 +86,8 @@
                 <ListView Name="Software" Margin="10">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Software Version"  Width="120" DisplayMemberBinding="{Binding BMSType}"/>
-                            <GridViewColumn Header="License Duration"  Width="120" DisplayMemberBinding="{Binding SoftwareVersion}"/>
+                            <GridViewColumn Header="Software Type"  Width="120" DisplayMemberBinding="{Binding SoftwareType}"/>
+                            <GridViewColumn Header="Software Version"  Width="120" DisplayMemberBinding="{Binding SoftwareVersion}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
