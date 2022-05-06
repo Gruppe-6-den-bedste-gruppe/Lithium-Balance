@@ -14,28 +14,14 @@ namespace Lithium_Balance.Models
         public string CompanyName { get; set; }
         public string Receiver { get; set; }
         public string LicenseDuration { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
         public string BMSType { get; set; }
         public string SoftwareVersion { get; set; }
         public string SoftwareType { get; set; }
 
-        /*public Order(string orderNumber, string companyName, string receiver, string licenseDuration, DateTime date, string email, string address,string bmsType, string softwareVersion, string softwareType)
-        {
-            OrderNumber = orderNumber;
-            CompanyName = companyName;
-            Receiver = receiver;
-            LicenseDuration = licenseDuration;
-            Date = date;
-            Email = email;
-            Address = address;
-            BMSType = bmsType;
-            SoftwareVersion = softwareVersion;
-            SoftwareType = softwareType;
-        }*/
-
-        public Order(string orderNumber, string companyName, string receiver, string email, string bMSType, string softwareVersion, string softwareType, string licenseDuration, string address)
+        public Order(string orderNumber, string companyName, string receiver, string email, string bMSType, string softwareVersion, string softwareType, string licenseDuration, string address, string date)
         {
             OrderNumber = orderNumber;
             CompanyName = companyName;
@@ -46,6 +32,7 @@ namespace Lithium_Balance.Models
             SoftwareType = softwareType;
             LicenseDuration = licenseDuration;
             Address = address;
+            Date = date;
         }
 
         public Order()
@@ -59,7 +46,7 @@ namespace Lithium_Balance.Models
             CompanyName = data[1];
             Receiver = data[2];
             LicenseDuration = data[3];
-            Date = DateTime.Parse(data[4]);
+            Date = data[4];
             Email = data[5];
             Address = data[6];
             BMSType = data[7];

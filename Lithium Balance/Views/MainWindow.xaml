@@ -27,6 +27,7 @@
                         <GridView>
                             <GridViewColumn Header="Order Number" Width="100" DisplayMemberBinding="{Binding OrderNumber}" />
                             <GridViewColumn Header="Company Name" Width="100" DisplayMemberBinding="{Binding CompanyName}" />
+                            <GridViewColumn Header="Date" Width="100" DisplayMemberBinding="{Binding Date}" />
                             <GridViewColumn Header="Receiver" Width="100" DisplayMemberBinding="{Binding Receiver}" />
                             <GridViewColumn Header="Email" Width="100" DisplayMemberBinding="{Binding Email}" />
                             <GridViewColumn Header="Address" Width="100" DisplayMemberBinding="{Binding Address}"/>
@@ -34,6 +35,7 @@
                             <GridViewColumn Header="Software Version" Width="100" DisplayMemberBinding="{Binding SoftwareVersion}" />
                             <GridViewColumn Header="Software Type" Width="100" DisplayMemberBinding="{Binding SoftwareType}" />
                             <GridViewColumn Header="License Duration" Width="100" DisplayMemberBinding="{Binding LicenseDuration}" />
+                            
                         </GridView>
                     </ListView.View>
                 </ListView>

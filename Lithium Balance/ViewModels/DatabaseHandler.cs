@@ -70,7 +70,7 @@ namespace Lithium_Balance.ViewModels
                     {
                         Order order = new Order();
                         order.OrderNumber = dr["OrderNo"].ToString();
-                        order.Date = (DateTime)(dr["Date"]);
+                        order.Date = dr["Date"].ToString();
                         order.CompanyName = dr["CompanyName"].ToString();
                         order.Receiver = dr["Receiver"].ToString();
                         order.Email = dr["Email"].ToString();

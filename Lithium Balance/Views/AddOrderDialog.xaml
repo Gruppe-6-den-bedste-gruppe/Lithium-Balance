@@ -61,7 +61,8 @@
             <TextBox Name="AOAddress" Text="{Binding Address}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
-
+            <Label Content="Date"/>
+            <DatePicker Name="AODate" SelectedDate="{Binding Date}" Width="120" HorizontalAlignment="Right" Margin="5" />
         </DockPanel>
         <DockPanel HorizontalAlignment="Right">
             <Button x:Name="SaveButton" Content="Save" Width="70" Height="23" Margin="5" Click="SaveButton_Click"/>
