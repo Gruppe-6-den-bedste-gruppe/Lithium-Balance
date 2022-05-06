@@ -63,7 +63,7 @@ namespace Lithium_Balance.ViewModels
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT OrderNo, Date, CompanyName, Receiver, Email, Address, BMSType, SoftwareVersion, LicenseDuration FROM Orders", connection);
+                SqlCommand command = new SqlCommand("SELECT OrderNo, Date, CompanyName, Receiver, Email, Address, BMSType, BMSVersion, SoftwareVersion, SoftwareType, LicenseDuration FROM Orders", connection);
                 using (SqlDataReader dr = command.ExecuteReader())
                 {
                     while (dr.Read())
@@ -76,6 +76,8 @@ namespace Lithium_Balance.ViewModels
                         order.Email = dr["Email"].ToString();
                         order.Address = dr["Address"].ToString();
                         order.BMSType = dr["BMSType"].ToString();
+                        order.BMSVersion = dr["BMSVersion"].ToString();
+                        order.SoftwareType = dr["SoftwareType"].ToString();
                         order.SoftwareVersion = dr["SoftwareVersion"].ToString();
                         order.LicenseDuration = dr["LicenseDuration"].ToString();
 
@@ -91,17 +93,18 @@ namespace Lithium_Balance.ViewModels
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 
-                SqlCommand command = new SqlCommand("INSERT INTO Orders (OrderNo, CompanyName, Receiver, Email, BMSType, SoftwareVersion, SoftwareType , LicenseDuration)" +
-                    "VALUES(@OrderNo, @CompanyName, @Receiver, @Email, @BMSType, @SoftwareVersion,@SoftwareType , @LicenseDuration)", connection);
+                SqlCommand command = new SqlCommand("INSERT INTO Orders (OrderNo, CompanyName, Receiver, Email, BMSType, BMSVersion, SoftwareVersion, SoftwareType, LicenseDuration, Address, Date)" +
+                    "VALUES(@OrderNo, @CompanyName, @Receiver, @Email, @BMSType, @BMSVersion, @SoftwareVersion,@SoftwareType , @LicenseDuration , @Address, @Date)", connection);
                 command.Parameters.AddWithValue("@OrderNo", order.OrderNumber);
                 command.Parameters.AddWithValue("@CompanyName", order.CompanyName);
                 command.Parameters.AddWithValue("@Receiver", order.Receiver);
                 command.Parameters.AddWithValue("@Email", order.Email);
                 command.Parameters.AddWithValue("@BMSTYpe", order.BMSType);
+                command.Parameters.AddWithValue("@BMSVersion", order.BMSVersion);
                 command.Parameters.AddWithValue("@SoftwareVersion", order.SoftwareVersion);
                 command.Parameters.AddWithValue("@SoftwareType", order.SoftwareType);
                 command.Parameters.AddWithValue("@LicenseDuration", order.LicenseDuration);
-                command.Parameters.AddWithValue("@Adress", order.Address);
+                command.Parameters.AddWithValue("@Address", order.Address);
                 command.Parameters.AddWithValue("@Date", order.Date);
 
                 connection.Open();

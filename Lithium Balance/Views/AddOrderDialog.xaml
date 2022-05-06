@@ -37,6 +37,22 @@
             </ComboBox>
         </DockPanel>
         <DockPanel>
+            <Label Content="BMS Version"/>
+            <ComboBox Name="AOBMSVersion" Width="120" Margin="5" HorizontalAlignment="Right" SelectedIndex="{Binding BMSVersion}">
+                <ComboBoxItem Content="2.2.5"/>
+                <ComboBoxItem Content="2.5.4"/>
+                <ComboBoxItem Content="3.5.6"/>
+            </ComboBox>
+        </DockPanel>
+        <DockPanel>
+            <Label Content="Software Type"/>
+            <ComboBox Name="AOSoftwareType" Width="120" Margin="5" HorizontalAlignment="Right" SelectedIndex="{Binding BMSType}">
+                <ComboBoxItem Content="2.4.3"/>
+                <ComboBoxItem Content="2.0.0"/>
+                <ComboBoxItem Content="3.4.5"/>
+            </ComboBox>
+        </DockPanel>
+        <DockPanel>
             <Label Content="Software Version"/>
             <ComboBox Name="AOSoftwareVersion" Width="120" Margin="5" HorizontalAlignment="Right" SelectedIndex="{Binding SoftwareVersion}">
                 <ComboBoxItem Content="2.2.2"/>
@@ -45,19 +61,11 @@
             </ComboBox>
         </DockPanel>
         <DockPanel>
-            <Label Content="Software Type"/>
-            <ComboBox Name="AOSoftwareType" Width="120" Margin="5" HorizontalAlignment="Right" SelectedIndex="{Binding BMSType}">
-                <ComboBoxItem Content="s-BMS"/>
-                <ComboBoxItem Content="c-BMS"/>
-                <ComboBoxItem Content="n-BMS"/>
-            </ComboBox>
-        </DockPanel>
-        <DockPanel>
             <Label Content="License Duration"/>
             <TextBox Name="AOLicenseDuration" Text="{Binding LicenseDuration}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
-            <Label Content="Adress"/>
+            <Label Content="Address"/>
             <TextBox Name="AOAddress" Text="{Binding Address}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
