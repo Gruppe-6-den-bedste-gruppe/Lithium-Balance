@@ -22,19 +22,20 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddOrder : Window
     {
-        private readonly DatabaseHandler databaseHandler;
-        private readonly OrderViewModel orderViewModel;
+        private readonly DatabaseHandler databaseHandler = new();
+        private readonly OrderViewModel orderViewModel = new();
         
         
         public AddOrder()
         {
             DataContext = orderViewModel;
             InitializeComponent();
+            
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            Order order = new Order();
+            Order order = new();
             order = orderViewModel.CreateOrder(AOOrderNumber.Text, AOCompanyName.Text, AOReceiver.Text, AOEmail.Text, AOBMSType.Text, AOSoftwareVersion.Text,AOSoftwareType.Text, AOLicenseDuration.Text);
             databaseHandler.SaveOrder(order);
             DialogResult = true;
