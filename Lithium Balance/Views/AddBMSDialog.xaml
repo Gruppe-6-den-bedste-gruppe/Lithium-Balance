@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lithium_Balance.Views"
         mc:Ignorable="d"
-         Title="Add new BMS" SizeToContent="Height" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+         Title="Add a new BMS" SizeToContent="Height" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <StackPanel Margin="5">
         <DockPanel>
             <Label Content="BMS Type"/>
