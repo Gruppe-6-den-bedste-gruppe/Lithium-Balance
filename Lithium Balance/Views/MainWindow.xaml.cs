@@ -23,12 +23,12 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly DatabaseHandler mvm;
+        private readonly MainWindowViewModel mvm;
         private readonly OrderViewModel orderViewModel;
 
         public MainWindow()
         {
-            mvm = new DatabaseHandler();
+            mvm = new MainWindowViewModel();
             InitializeComponent();
             DataContext = mvm;
             Orders.ItemsSource = mvm.OrdersCollection;

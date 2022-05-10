@@ -14,13 +14,13 @@ using System.ComponentModel;
 
 namespace Lithium_Balance.ViewModels
 {
-    public class DatabaseHandler : INotifyPropertyChanged
+    public class MainWindowViewModel
     {
         public List<Order> OrdersList = new();
         public ObservableCollection<Order> OrdersCollection = new();
 
 
-        public DatabaseHandler()
+        public MainWindowViewModel()
         {
             OrdersCollection = new ObservableCollection<Order>(OrdersList);
             GetOrderInfo();
@@ -28,18 +28,12 @@ namespace Lithium_Balance.ViewModels
             {
                 OrdersCollection.Add(OrdersList[i]);
             }
-            OrdersCollection.Add(null);
         }
 
 
         private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged(ObservableCollection<Order> orders)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OrdersCollection)));
-        }
+        
 
 
         public bool IsDbConnected()
@@ -87,31 +81,6 @@ namespace Lithium_Balance.ViewModels
                 }
             }
             return OrdersList;
-        }
-        public void SaveOrder(Order order)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                
-                SqlCommand command = new SqlCommand("INSERT INTO Orders (OrderNo, CompanyName, Receiver, Email, BMSType, BMSVersion, SoftwareVersion, SoftwareType, LicenseDuration, Address, Date)" +
-                    "VALUES(@OrderNo, @CompanyName, @Receiver, @Email, @BMSType, @BMSVersion, @SoftwareVersion,@SoftwareType , @LicenseDuration , @Address, @Date)", connection);
-                command.Parameters.AddWithValue("@OrderNo", order.OrderNumber);
-                command.Parameters.AddWithValue("@CompanyName", order.CompanyName);
-                command.Parameters.AddWithValue("@Receiver", order.Receiver);
-                command.Parameters.AddWithValue("@Email", order.Email);
-                command.Parameters.AddWithValue("@BMSTYpe", order.BMSType);
-                command.Parameters.AddWithValue("@BMSVersion", order.BMSVersion);
-                command.Parameters.AddWithValue("@SoftwareVersion", order.SoftwareVersion);
-                command.Parameters.AddWithValue("@SoftwareType", order.SoftwareType);
-                command.Parameters.AddWithValue("@LicenseDuration", order.LicenseDuration);
-                command.Parameters.AddWithValue("@Address", order.Address);
-                command.Parameters.AddWithValue("@Date", order.Date);
-
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
-
-            }
         }
     }
 }
