@@ -41,7 +41,7 @@
                     </ListView.View>
                 </ListView>
                 <Button x:Name="Update" Content="Update" Width="50" Height="50" HorizontalAlignment="Left" Click="Update_Click_1"/>
-                <Button x:Name="AddOrderButton" Content="Add Order" Width="75" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="AddOrder_Click_1"/>
+                
             </Grid>
         </TabItem>
         <TabItem>
@@ -96,7 +96,26 @@
                 </ListView>
             </Grid>
         </TabItem>
-
+        <TabItem>
+            <TabItem.Header>
+                <Button Content="Add Order" Width="75" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="AddOrder_Click_1"/>
+            </TabItem.Header>
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <Button Content="Add Customer" Width="75" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="AddCustomer_Click"/>
+            </TabItem.Header>
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <Button Content="Add BMS" Width="75" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="AddBMS_Click"/>
+            </TabItem.Header>
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <Button Content="Add Software" Width="75" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="AddSoftware_Click"/>
+            </TabItem.Header>
+        </TabItem>
     </TabControl>
     
 </Window>

@@ -28,12 +28,12 @@ namespace Lithium_Balance.Views
 
         public MainWindow()
         {
-            mvm = new MainWindowViewModel();
+            /*mvm = new MainWindowViewModel();*/
             InitializeComponent();
-            DataContext = mvm;
+           /* DataContext = mvm;
             Orders.ItemsSource = mvm.OrdersCollection;
             Customers.ItemsSource = mvm.OrdersCollection;
-            BMS.ItemsSource = mvm.OrdersCollection;
+            BMS.ItemsSource = mvm.OrdersCollection;*/
             
 
 

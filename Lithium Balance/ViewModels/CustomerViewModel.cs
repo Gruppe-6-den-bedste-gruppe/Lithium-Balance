@@ -27,7 +27,7 @@ namespace Lithium_Balance.ViewModels
                     "VALUES(@CompanyName, @Email, @Address)", connection);
                 command.Parameters.AddWithValue("@CompanyName", customer.CompanyName );
                 command.Parameters.AddWithValue("@Email", customer.Email);
-                command.Parameters.AddWithValue("@Receiver", customer.Address);
+                command.Parameters.AddWithValue("@Address", customer.Address);
                 
                 connection.Open();
                 command.ExecuteNonQuery();
