@@ -57,7 +57,7 @@ namespace Lithium_Balance.ViewModels
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT OrderNo, Date, CompanyName, Receiver, Email, Address, BMSType, BMSVersion, SoftwareVersion, SoftwareType, LicenseDuration FROM Orders", connection);
+                SqlCommand command = new SqlCommand("SELECT OrderNumber, Date, CompanyName, Receiver, Email, Address, BMSType, BMSVersion, SoftwareVersion, SoftwareType, LicenseDuration FROM Orders, Customer, BMS, Software", connection);
                 using (SqlDataReader dr = command.ExecuteReader())
                 {
                     while (dr.Read())

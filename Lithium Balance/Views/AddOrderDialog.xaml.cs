@@ -22,7 +22,6 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddOrder : Window
     {
-        private readonly MainWindowViewModel databaseHandler = new();
         private readonly OrderViewModel orderViewModel = new();
         
         

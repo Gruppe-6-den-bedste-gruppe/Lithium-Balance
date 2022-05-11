@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lithium_Balance.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,19 +20,22 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddCustomerDialog : Window
     {
+        private readonly CustomerViewModel customerViewModel = new();
         public AddCustomerDialog()
         {
+            DataContext = customerViewModel;
             InitializeComponent();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            customerViewModel.SaveCustomer(customerViewModel.CreateCustomer(ACCompanyName.Text, ACEmail.Text, ACAddress.Text);
+            DialogResult = true;
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            DialogResult = false;
         }
     }
 }
