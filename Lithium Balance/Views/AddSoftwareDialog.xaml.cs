@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Lithium_Balance.ViewModels;
 
 namespace Lithium_Balance.Views
 {
@@ -19,6 +20,7 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddSoftwareDialog : Window
     {
+        private readonly SoftwareViewModel softwareViewModel = new();
         public AddSoftwareDialog()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace Lithium_Balance.Views
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            softwareViewModel.SaveSoftware(softwareViewModel.CreateSoftware(ASSoftwareType.Text, ASSoftwareVersion.Text));
             DialogResult = true;
         }
 

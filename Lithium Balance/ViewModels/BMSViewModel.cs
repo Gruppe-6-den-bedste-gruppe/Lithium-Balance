@@ -23,7 +23,7 @@ namespace Lithium_Balance.ViewModels
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
 
-                SqlCommand command = new SqlCommand("INSERT INTO BMS (@BMSType, @BMSVersion)", connection);
+                SqlCommand command = new SqlCommand("INSERT INTO BMS (bmsType, bmsVersion)" + "VALUES(@BMSType, @BMSVersion)", connection);
                 command.Parameters.AddWithValue("@BMSType", bms.BMSType);
                 command.Parameters.AddWithValue("@BMSVersion", bms.BMSVersion);
 

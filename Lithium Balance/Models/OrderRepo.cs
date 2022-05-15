@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lithium_Balance.Models
 {
-    public class OrderRepo : Repository<Order>
+    public class OrderRepo
     {
-        public OrderRepo(string path) : base(path)
-        {
-            
-        }
+        
     }
 }

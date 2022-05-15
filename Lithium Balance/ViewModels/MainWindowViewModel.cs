@@ -57,23 +57,22 @@ namespace Lithium_Balance.ViewModels
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT OrderNumber, Date, CompanyName, Receiver, Email, Address, BMSType, BMSVersion, SoftwareVersion, SoftwareType, LicenseDuration FROM Orders, Customer, BMS, Software", connection);
+                SqlCommand command = new SqlCommand("SELECT orderNumber, date, companyName, email, address, bmsType, bmsVersion, softwareVersion, softwareType, licenseDuration FROM Orders, Customer, BMS, Software", connection);
                 using (SqlDataReader dr = command.ExecuteReader())
                 {
                     while (dr.Read())
                     {
                         Order order = new Order();
-                        order.OrderNumber = dr["OrderNo"].ToString();
-                        order.Date = dr["Date"].ToString();
-                        order.CompanyName = dr["CompanyName"].ToString();
-                        order.Receiver = dr["Receiver"].ToString();
-                        order.Email = dr["Email"].ToString();
-                        order.Address = dr["Address"].ToString();
-                        order.BMSType = dr["BMSType"].ToString();
-                        order.BMSVersion = dr["BMSVersion"].ToString();
-                        order.SoftwareType = dr["SoftwareType"].ToString();
-                        order.SoftwareVersion = dr["SoftwareVersion"].ToString();
-                        order.LicenseDuration = dr["LicenseDuration"].ToString();
+                        order.OrderNumber = dr["orderNumber"].ToString();
+                        order.Date = dr["date"].ToString();
+                        order.CompanyName = dr["companyName"].ToString();
+                        order.Email = dr["email"].ToString();
+                        order.Address = dr["address"].ToString();
+                        order.BMSType = dr["bmsType"].ToString();
+                        order.BMSVersion = dr["bmsVersion"].ToString();
+                        order.SoftwareType = dr["softwareType"].ToString();
+                        order.SoftwareVersion = dr["softwareVersion"].ToString();
+                        order.LicenseDuration = dr["licenseDuration"].ToString();
 
                         OrdersList.Add(order);
 

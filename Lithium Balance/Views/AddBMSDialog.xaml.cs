@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Lithium_Balance.ViewModels;
 
 namespace Lithium_Balance.Views
 {
@@ -19,15 +20,17 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddBMSDialog : Window
     {
+        private readonly BMSViewModel bMSViewModel = new();
         public AddBMSDialog()
         {
             InitializeComponent();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
-                {
-                    DialogResult=true;
-                }
+        {
+            bMSViewModel.SaveBMS(bMSViewModel.CreateBMS(ABBMSType.Text, ABBMSVersion.Text));
+            DialogResult = true;
+        }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;

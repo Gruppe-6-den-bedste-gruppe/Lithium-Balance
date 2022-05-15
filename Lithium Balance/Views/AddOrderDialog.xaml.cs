@@ -23,11 +23,16 @@ namespace Lithium_Balance.Views
     public partial class AddOrder : Window
     {
         private readonly OrderViewModel orderViewModel = new();
+        private readonly MainWindowViewModel mainWindowViewModel = new();
         
-        
+
         public AddOrder()
         {
-            DataContext = orderViewModel;
+            DataContext = mainWindowViewModel.OrdersCollection;
+            BMSType.ItemsSource = mainWindowViewModel.OrdersCollection;
+            BMSVersion.ItemsSource = mainWindowViewModel.OrdersCollection;
+            SoftwareType.ItemsSource = mainWindowViewModel.OrdersCollection;
+            SoftwareVersion.ItemsSource = mainWindowViewModel.OrdersCollection;
             InitializeComponent();
             
         }
@@ -35,7 +40,7 @@ namespace Lithium_Balance.Views
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             
-            orderViewModel.SaveOrder(orderViewModel.CreateOrder(AOOrderNumber.Text, AOCompanyName.Text, AOReceiver.Text, AOEmail.Text, AOBMSType.Text, AOBMSVersion.Text, AOSoftwareType.Text, AOSoftwareVersion.Text, AOLicenseDuration.Text, AOAddress.Text, AODate.ToString()));
+            orderViewModel.SaveOrder(orderViewModel.CreateOrder(OrderNumber.Text, CompanyName.Text, Email.Text, BMSType.Text, BMSVersion.Text, SoftwareType.Text, SoftwareVersion.Text, LicenseDuration.Text, Address.Text, Date.ToString()));
             DialogResult = true;
         }
 

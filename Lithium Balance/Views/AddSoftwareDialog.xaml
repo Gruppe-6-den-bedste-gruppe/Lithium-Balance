@@ -9,11 +9,11 @@
     <StackPanel Margin="5">
         <DockPanel>
             <Label Content="Software Type"/>
-            <TextBox Text="{Binding SoftwareType}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Name="ASSoftwareType" Text="{Binding SoftwareType}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
             <Label Content="Software Version"/>
-            <TextBox Text="{Binding SoftwareVersion}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Name="ASSoftwareVersion" Text="{Binding SoftwareVersion}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel HorizontalAlignment="Right">
             <Button x:Name="SaveButton" Content="Save" Width="70" Height="23" Margin="5" Click="SaveButton_Click"/>
