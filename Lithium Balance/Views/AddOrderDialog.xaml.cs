@@ -29,10 +29,10 @@ namespace Lithium_Balance.Views
         public AddOrder()
         {
             DataContext = mainWindowViewModel.OrdersCollection;
-            BMSType.ItemsSource = mainWindowViewModel.OrdersCollection;
+           /* BMSType.ItemsSource = mainWindowViewModel.OrdersCollection;
             BMSVersion.ItemsSource = mainWindowViewModel.OrdersCollection;
             SoftwareType.ItemsSource = mainWindowViewModel.OrdersCollection;
-            SoftwareVersion.ItemsSource = mainWindowViewModel.OrdersCollection;
+            SoftwareVersion.ItemsSource = mainWindowViewModel.OrdersCollection;*/
             InitializeComponent();
             
         }

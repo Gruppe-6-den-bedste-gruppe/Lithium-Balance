@@ -22,22 +22,22 @@
         </DockPanel>
         <DockPanel>
             <Label Content="BMS Type"/>
-            <ComboBox Name="BMSType" Width="120" Margin="5" HorizontalAlignment="Right">
+            <ComboBox Name="BMSType" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding BMSType}">
             </ComboBox>
         </DockPanel>
         <DockPanel>
             <Label Content="BMS Version"/>
-            <ComboBox Name="BMSVersion" Width="120" Margin="5" HorizontalAlignment="Right">
+            <ComboBox Name="BMSVersion" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding BMSVersion}">
             </ComboBox>
         </DockPanel>
         <DockPanel>
             <Label Content="Software Type"/>
-            <ComboBox Name="SoftwareType" Width="120" Margin="5" HorizontalAlignment="Right">
+            <ComboBox Name="SoftwareType" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding SoftwareType}">
             </ComboBox>
         </DockPanel>
         <DockPanel>
             <Label Content="Software Version"/>
-            <ComboBox Name="SoftwareVersion" Width="120" Margin="5" HorizontalAlignment="Right">
+            <ComboBox Name="SoftwareVersion" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding SoftwareVersion}">
             </ComboBox>
         </DockPanel>
         <DockPanel>

@@ -57,14 +57,15 @@ namespace Lithium_Balance.ViewModels
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("SELECT orderNumber, date, companyName, email, address, bmsType, bmsVersion, softwareVersion, softwareType, licenseDuration FROM Orders, Customer, BMS, Software", connection);
+                SqlCommand command = new SqlCommand("SELECT orderNumber, date, licenseDuration, companyName, email, address,  bmsType, bmsVersion, softwareVersion, softwareType FROM orders, Customer, BMS,   Software", connection);
                 using (SqlDataReader dr = command.ExecuteReader())
                 {
                     while (dr.Read())
                     {
-                        Order order = new Order();
+                        Order order = new();
                         order.OrderNumber = dr["orderNumber"].ToString();
                         order.Date = dr["date"].ToString();
+                        order.LicenseDuration = dr["licenseDuration"].ToString();
                         order.CompanyName = dr["companyName"].ToString();
                         order.Email = dr["email"].ToString();
                         order.Address = dr["address"].ToString();
@@ -72,12 +73,11 @@ namespace Lithium_Balance.ViewModels
                         order.BMSVersion = dr["bmsVersion"].ToString();
                         order.SoftwareType = dr["softwareType"].ToString();
                         order.SoftwareVersion = dr["softwareVersion"].ToString();
-                        order.LicenseDuration = dr["licenseDuration"].ToString();
 
                         OrdersList.Add(order);
-
                     }
                 }
+                connection.Close();
             }
             return OrdersList;
         }
