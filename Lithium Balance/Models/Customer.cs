@@ -20,5 +20,9 @@ namespace Lithium_Balance.Models
             this.Address = Address;
             this.Email = Email;
         }
+
+        public Customer()
+        {
+        }
     }
 }

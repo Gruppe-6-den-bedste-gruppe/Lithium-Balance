@@ -21,6 +21,10 @@ namespace Lithium_Balance.Models
 
         }
 
+        public BMS()
+        {
+        }
+
         public void Parse(string line)
         {
             string[] data = line.Split(';');

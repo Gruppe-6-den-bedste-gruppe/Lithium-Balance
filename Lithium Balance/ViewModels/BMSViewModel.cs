@@ -11,6 +11,7 @@ namespace Lithium_Balance.ViewModels
     internal class BMSViewModel
     {
         private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
+        
         public BMS CreateBMS(string BMSType, string BMSVersion)
         {
             BMS bms = new BMS(BMSType, BMSVersion);
