@@ -26,8 +26,10 @@ responsibleID int foreign key references responsible(responsibleID),
 softwareID int foreign key references software(softwareID),
 bmsID int foreign key references bms(bmsID))
 */
-select * from orders 
+/*select * from orders 
 join customer on customer.customerID = orders.customerID
 join bms on bms.bmsID = orders.bmsID
 join software on software.softwareID = orders.softwareID
-
+*/
+update Customer set companyName = 'Jakobs firma', email = 'Jakobs email', address = 'Jakobs adress' where customerID = 1
+select * from Customer

@@ -34,7 +34,8 @@ namespace Lithium_Balance.Views
             Orders.ItemsSource = mvm.OrdersCollection;
             Customers.ItemsSource = mvm.OrdersCollection;
             BMS.ItemsSource = mvm.OrdersCollection;
-            
+            Software.ItemsSource = mvm.OrdersCollection;
+
 
 
         }

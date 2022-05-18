@@ -23,16 +23,13 @@ namespace Lithium_Balance.Views
     public partial class AddOrder : Window
     {
         private readonly OrderViewModel orderViewModel = new();
-        private readonly MainWindowViewModel mainWindowViewModel = new();
+        private readonly MainWindowViewModel mvm = new();
+        public string SelectedValue { get; set; }
         
 
         public AddOrder()
         {
-            DataContext = mainWindowViewModel.OrdersCollection;
-            BMSType.ItemsSource = mainWindowViewModel.OrdersCollection;
-            BMSVersion.ItemsSource = mainWindowViewModel.OrdersCollection;
-            SoftwareType.ItemsSource = mainWindowViewModel.OrdersCollection;
-            SoftwareVersion.ItemsSource = mainWindowViewModel.OrdersCollection;
+
             InitializeComponent();
             
         }
