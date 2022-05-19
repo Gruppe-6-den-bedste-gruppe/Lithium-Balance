@@ -40,7 +40,14 @@ namespace Lithium_Balance.Views
 
         }
 
-       
+
+        private void AddOrder_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddOrderDialog dialog = new();
+
+            dialog.ShowDialog();
+        }
+
         private void AddCustomer_Click(object sender, RoutedEventArgs e)
         {
             AddCustomerDialog dialog = new();
@@ -90,12 +97,9 @@ namespace Lithium_Balance.Views
 
         }
 
-        private void AddOrder_Click_1(object sender, RoutedEventArgs e)
-        {
-            AddOrder dialog = new();
 
-            dialog.ShowDialog();
-        }
+
+        
 
 
 

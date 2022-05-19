@@ -14,25 +14,29 @@ using System.Windows.Shapes;
 using Lithium_Balance.Views;
 using Lithium_Balance.ViewModels;
 using Lithium_Balance.Models;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Lithium_Balance.Views
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class AddOrder : Window
+    public partial class AddOrderDialog : Window
     {
         private readonly OrderViewModel orderViewModel = new();
         private readonly MainWindowViewModel mvm = new();
         public string SelectedValue { get; set; }
         
 
-        public AddOrder()
+        public AddOrderDialog()
         {
 
             InitializeComponent();
-            
+
         }
+
+
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
