@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Lithium_Balance.ViewModels
 {
-    internal class CustomerViewModel
+    public class CustomerViewModel
     {
         private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
         public Customer CreateCustomer(string CompanyName, string Email, string Address)
@@ -35,6 +35,8 @@ namespace Lithium_Balance.ViewModels
 
             }
         }
+
+
 
     }
 }

@@ -23,8 +23,8 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly MainWindowViewModel mvm;
-        private readonly OrderViewModel orderViewModel;
+        private  MainWindowViewModel mvm;
+        //private readonly OrderViewModel orderViewModel;
 
         public MainWindow()
         {

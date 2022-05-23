@@ -16,6 +16,7 @@ using Lithium_Balance.ViewModels;
 using Lithium_Balance.Models;
 using System.Data.SqlClient;
 using System.Data;
+using System.Collections.ObjectModel;
 
 namespace Lithium_Balance.Views
 {
@@ -24,18 +25,41 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddOrderDialog : Window
     {
-        private readonly OrderViewModel orderViewModel = new();
-        private readonly MainWindowViewModel mvm = new();
-        public string SelectedValue { get; set; }
-        
+        private OrderViewModel orderViewModel = new();
+        //private readonly MainWindowViewModel mvm = new();
+        //public string SelectedValue { get; set; }
 
+        public ObservableCollection<BMS> GetBMS { get; set; }
+        public ObservableCollection<Customer> GetCustomer { get; set; }
+        public ObservableCollection<Software> GetSoftware { get; set; }
+
+
+        public BMS SelectedBMS { get; set; }
+        public Customer SelectedCustomer { get; set; }
+        public Software SelectedSoftware { get; set; }
+        
+        public OrderViewModel OrderViewModel
+        {
+            get
+            {
+                return orderViewModel;
+            }
+            set
+            {
+                orderViewModel = value;
+            }
+        }
         public AddOrderDialog()
         {
 
+            GetBMS = new ObservableCollection<BMS>();
+            GetCustomer = new ObservableCollection<Customer>();
+            GetSoftware = new ObservableCollection<Software>();
             InitializeComponent();
+            DataContext = this;
+
 
         }
-
 
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)

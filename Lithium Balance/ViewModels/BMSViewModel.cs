@@ -5,11 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Lithium_Balance.Models;
 using System.Data.SqlClient;
+using System.Collections.ObjectModel;
 
 namespace Lithium_Balance.ViewModels
 {
-    internal class BMSViewModel
+    public class BMSViewModel
     {
+       
+
+        public ObservableCollection<BMS> BMSList { get; set; }
+
+
         private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
         public BMS CreateBMS(string BMSType, string BMSVersion)
         {

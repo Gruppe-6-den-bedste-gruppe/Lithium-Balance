@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lithium_Balance.Views"
         xmlns:viewmodel="clr-namespace:Lithium_Balance.ViewModels"
+        xmlns:models="clr-namespace:Lithium_Balance.Models"
         mc:Ignorable="d"
         Title="Add new order" SizeToContent="Height" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <Window.Resources>
@@ -15,32 +16,32 @@
             <TextBox Name="OrderNumber" Text="" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
-            <Label Content="Company Name"/> 
-            <ComboBox Name="CompanyName"  Width="120" HorizontalAlignment="Right" Margin="5" ItemsSource="{Binding CompanyName.OrdersCollection}" DisplayMemberPath="CompanyName" >
+            <Label Content="Company Name"/>
+            <ComboBox Name="CompanyName"  Width="120" HorizontalAlignment="Right" Margin="5" ItemsSource="{Binding GetCustomer}" SelectedItem="{Binding SelectedCustomer}" DisplayMemberPath="CompanyName">
             </ComboBox>
         </DockPanel>
         <DockPanel>
             <Label Content="Email"/>
-            <ComboBox Name="Email" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding Email.OrdersCollection}" DisplayMemberPath="Email"/>
+            <ComboBox Name="Email" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding GetCustomer}" SelectedItem="{Binding SelectedCustomer}" DisplayMemberPath="Email"/>
         </DockPanel>
         <DockPanel>
             <Label Content="BMS Type"/>
-            <ComboBox Name="BMSType" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding BMSType.OrdersCollection}" DisplayMemberPath="BMSType"/>
+            <ComboBox Name="BMSType" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding GetBMS}" SelectedItem="{Binding SelectedBMS}" DisplayMemberPath="BMSType"/>
 
         </DockPanel>
         <DockPanel>
             <Label Content="BMS Version"/>
-            <ComboBox Name="BMSVersion" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding mvm.OrdersCollection}" DisplayMemberPath="BmsVersion"/>
+            <ComboBox Name="BMSVersion" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding GetBMS}" SelectedItem="{Binding SelectedBMS}" DisplayMemberPath="BMSVersion"/>
 
         </DockPanel>
         <DockPanel>
             <Label Content="Software Type"/>
-            <ComboBox Name="SoftwareType" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding SoftwareType.OrdersCollection}" DisplayMemberPath="SoftwareType"/>
+            <ComboBox Name="SoftwareType" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding GetSoftware}" SelectedItem="{Binding SelectedSoftware}" DisplayMemberPath="SoftwareType"/>
 
         </DockPanel>
         <DockPanel>
             <Label Content="Software Version"/>
-            <ComboBox Name="SoftwareVersion" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding SoftwareVersion.OrdersCollection}" DisplayMemberPath="SoftwareVersion"/>
+            <ComboBox Name="SoftwareVersion" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding GetSoftware}" SelectedItem="{Binding SelectedSoftware}" DisplayMemberPath="SoftwareVersion"/>
 
         </DockPanel>
         <DockPanel>
