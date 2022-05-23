@@ -13,7 +13,7 @@
     <StackPanel Margin="5">
         <DockPanel>
             <Label Content="Order Number"/>
-            <TextBox Name="OrderNumber" Text="" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Name="OrderNumber" Text="{Binding OrderNumber}"  Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
             <Label Content="Company Name"/>
@@ -46,11 +46,11 @@
         </DockPanel>
         <DockPanel>
             <Label Content="License Duration"/>
-            <TextBox Name="LicenseDuration"  Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Name="LicenseDuration" Text="{Binding LicenseDuration}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
             <Label Content="Address"/>
-            <TextBox Name="Address"  Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Name="Address" Text="{Binding Address}"  Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
             <Label Content="Date"/>
