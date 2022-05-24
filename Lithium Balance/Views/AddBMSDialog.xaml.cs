@@ -28,7 +28,7 @@ namespace Lithium_Balance.Views
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            bMSViewModel.SaveBMS(bMSViewModel.CreateBMS(ABBMSType.Text, ABBMSVersion.Text));
+            bMSViewModel.SaveBMS(bMSViewModel.CreateBMS(ABBMSType.Text, ABBMSType.Text, ABBMSVersion.Text));
             DialogResult = true;
         }
         private void CancelButton_Click(object sender, RoutedEventArgs e)

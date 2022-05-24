@@ -29,14 +29,6 @@ namespace Lithium_Balance.Views
         //private readonly MainWindowViewModel mvm = new();
         //public string SelectedValue { get; set; }
 
-        public ObservableCollection<BMS> GetBMS { get; set; }
-        public ObservableCollection<Customer> GetCustomer { get; set; }
-        public ObservableCollection<Software> GetSoftware { get; set; }
-
-
-        public BMS SelectedBMS { get; set; }
-        public Customer SelectedCustomer { get; set; }
-        public Software SelectedSoftware { get; set; }
         
         public OrderViewModel OrderViewModel
         {
@@ -52,11 +44,9 @@ namespace Lithium_Balance.Views
         public AddOrderDialog()
         {
 
-            GetBMS = new ObservableCollection<BMS>();
-            GetCustomer = new ObservableCollection<Customer>();
-            GetSoftware = new ObservableCollection<Software>();
+
             InitializeComponent();
-            DataContext = this;
+            DataContext = OrderViewModel; //Binding View til Viewmodel. Hvis vi benyttede DataContex = this; er det fra View til View Binding
 
 
         }
