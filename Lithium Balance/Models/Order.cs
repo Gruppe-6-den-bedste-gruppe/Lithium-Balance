@@ -4,8 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lithium_Balance.ViewModels;
-using Lithium_Balance.Views;
+using Lithium_Balance.ViewModels;  //Models --> Viewmodel
 
 namespace Lithium_Balance.Models
 {
@@ -40,17 +39,5 @@ namespace Lithium_Balance.Models
         {
         }
 
-        /*
-        ============================================================================================
-             Commented out for now, this shouldn't relevant in Model, but in ViewModel instead
-        ============================================================================================
-          
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        */
     }
 }

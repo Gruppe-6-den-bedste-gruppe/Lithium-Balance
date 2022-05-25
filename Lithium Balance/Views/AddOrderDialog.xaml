@@ -9,8 +9,11 @@
         mc:Ignorable="d"
         Title="Add new order" SizeToContent="Height" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <Window.Resources>
+        <viewmodel:OrderViewModel x:Key="vm"></viewmodel:OrderViewModel>
     </Window.Resources>
-    <StackPanel Margin="5">
+    
+    
+    <StackPanel Margin="5" DataContext="{Binding Source= {StaticResource vm}}">
         <DockPanel>
             <Label Content="Order Number"/>
             <TextBox Name="OrderNumber" Text="{Binding OrderNumber}"  Width="120" HorizontalAlignment="Right" Margin="5"/>
