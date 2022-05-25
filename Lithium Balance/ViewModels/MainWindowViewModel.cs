@@ -18,7 +18,7 @@ namespace Lithium_Balance.ViewModels
     {
         public List<Order> OrdersList = new();
         public ObservableCollection<Order> OrdersCollection = new();
-        
+        private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
 
 
         public MainWindowViewModel()
@@ -32,7 +32,7 @@ namespace Lithium_Balance.ViewModels
         }
 
 
-        private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
+       
 
         
 

@@ -8,6 +8,9 @@ namespace Lithium_Balance.Models
 {
     public class OrderRepo
     {
-        
+        public OrderRepo()
+        {
+
+        }
     }
 }

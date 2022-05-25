@@ -21,18 +21,7 @@ namespace Lithium_Balance.Models
 
         }
 
-        public void Parse(string line)
-        {
-            string []data = line.Split(';');
-            SoftwareType = data[0];
-            SoftwareVersion = data[1];
 
-        }
-
-        public string Format()
-        {
-            return $"{SoftwareType};{SoftwareVersion}";
-        }
     }
 
 }
