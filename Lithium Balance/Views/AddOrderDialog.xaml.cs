@@ -11,9 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Lithium_Balance.Views;
 using Lithium_Balance.ViewModels;
-using Lithium_Balance.Models;
 using System.Data.SqlClient;
 using System.Data;
 using System.Collections.ObjectModel;
@@ -46,18 +44,26 @@ namespace Lithium_Balance.Views
 
 
             InitializeComponent();
-            DataContext = OrderViewModel; //Binding View til Viewmodel. Hvis vi benyttede DataContex = this; er det fra View til View Binding
+            DataContext = OrderViewModel;    // View --> ViewModel
 
 
         }
 
-
+        /*
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             
             orderViewModel.SaveOrder(orderViewModel.CreateOrder(OrderNumber.Text, CompanyName.Text, Email.Text, BMSType.Text, BMSVersion.Text, SoftwareType.Text, SoftwareVersion.Text, LicenseDuration.Text, Address.Text, Date.ToString()));
             DialogResult = true;
         }
+        */
+
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {

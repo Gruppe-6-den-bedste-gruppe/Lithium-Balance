@@ -12,41 +12,32 @@ namespace Lithium_Balance.ViewModels
 {
     public class OrderViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
 
-    
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        //Missing (null)? correction, refference: Jan video: "Databind 4 - XAML to Object2.mp4"
+
 
         public OrderViewModel()
         {
         }
-
-        //Update funktion men ingen update funktion lavet
-        //public OrderViewModel(Order order)
-        //{
-        //    OrderNumber = order.OrderNumber;
-        //    CompanyName = order.CompanyName;
-        //    LicenseDuration = order.LicenseDuration;
-        //    Date = order.Date;
-        //    Email = order.Email;
-        //    Address = order.Address;
-        //    BMSType = order.BMSType;
-        //    SoftwareVersion = order.SoftwareVersion;
-        //    SoftwareType = order.SoftwareType;
-        //    return;
-        //}
-
-
-
 
         public ObservableCollection<BMS> GetBMS { get; set; }
         public ObservableCollection<Customer> GetCustomer { get; set; }
         public ObservableCollection<Software> GetSoftware { get; set; }
 
 
+        /*
+        ==================================================================================================================
+                                       DATABASE "CreateOrder" and "SaveOrder" from SQL Table
+        ==================================================================================================================
+        */
+         
         private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
-        
-       
-        
-        
+
         public Order CreateOrder(string OrderNumber, string CompanyName, string Email, string BMSType,string BMSVersion, string SoftwareVersion, string SoftwareType, string LicenseDuration, string Address, string Date)
         {
             Order order = new Order(OrderNumber, CompanyName, Email, BMSType, BMSVersion, SoftwareVersion, SoftwareType, LicenseDuration , Address, Date);
@@ -81,14 +72,6 @@ namespace Lithium_Balance.ViewModels
             }
         }
 
-
         
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
     }
 }

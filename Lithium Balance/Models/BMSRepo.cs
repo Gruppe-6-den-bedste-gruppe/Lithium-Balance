@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Lithium_Balance.ViewModels;  //  Models --> ViewModel
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Lithium_Balance.Views;
-using Lithium_Balance.Models;
 using System.Data.SqlClient;
-using Lithium_Balance.ViewModels;
 
 namespace Lithium_Balance.Models
 {

@@ -11,8 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Lithium_Balance.Models;
-using Lithium_Balance.Views;
 using Lithium_Balance.ViewModels;
 using System.IO;
 

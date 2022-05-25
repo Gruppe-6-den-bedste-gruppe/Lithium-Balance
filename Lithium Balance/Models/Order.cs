@@ -9,7 +9,7 @@ using Lithium_Balance.Views;
 
 namespace Lithium_Balance.Models
 {
-    public class Order : INotifyPropertyChanged
+    public class Order
     {
         public string OrderNumber { get; set; }
         public string CompanyName { get; set; }
@@ -40,31 +40,17 @@ namespace Lithium_Balance.Models
         {
         }
 
+        /*
+        ============================================================================================
+             Commented out for now, this shouldn't relevant in Model, but in ViewModel instead
+        ============================================================================================
+          
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void NotifyPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        //public void Parse(string line)
-        //{
-        //    string[] data = line.Split(';');
-        //    OrderNumber = data[0];
-        //    CompanyName = data[1];
-        //    LicenseDuration = data[3];
-        //    Date = data[4];
-        //    Email = data[5];
-        //    Address = data[6];
-        //    BMSType = data[7];
-        //    BMSVersion = data[8];
-        //    SoftwareVersion = data[9];
-        //    SoftwareType = data[10];
-        //}
-
-        //public string Format()
-        //{
-        //    return $"{OrderNumber};{CompanyName};{Receiver};{LicenseDuration};{Date};{Email};{Address};{BMSType};{BMSVersion};{SoftwareVersion},{SoftwareType}";
-        //}
+        */
     }
 }

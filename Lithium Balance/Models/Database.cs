@@ -9,6 +9,13 @@ namespace Lithium_Balance.Models
     public class Database
     {
 
+
+        /*
+        =============================================================
+                         Connection to SQL Database
+        =============================================================
+        */
+
         public string connectionString { get; set; }
         public string Db { get; set; }
         public string User { get; set; }
