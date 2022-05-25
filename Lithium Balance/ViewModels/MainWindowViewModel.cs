@@ -24,7 +24,7 @@ namespace Lithium_Balance.ViewModels
         public MainWindowViewModel()
         {
             OrdersCollection = new ObservableCollection<Order>(OrdersList);
-            GetOrderInfo();
+            ShowOrders();
             for (int i = 0; i < OrdersList.Count; i++)
             {
                 OrdersCollection.Add(OrdersList[i]);
@@ -53,7 +53,7 @@ namespace Lithium_Balance.ViewModels
         }
 
 
-        public List<Order> GetOrderInfo()
+        public List<Order> ShowOrders()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
