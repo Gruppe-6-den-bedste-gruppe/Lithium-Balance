@@ -14,32 +14,32 @@ namespace Lithium_Balance.ViewModels
     {
 
 
-        public ObservableCollection<BMS> BMSList { get; set; }
+        //public ObservableCollection<BMS> BMSList { get; set; }
 
 
-        private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
-        public BMS CreateBMS(string bmsID,string BMSType, string BMSVersion)
-        {
-            BMS bms = new BMS(bmsID,BMSType, BMSVersion);
+        //private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
+        //public BMS CreateBMS(string bmsID,string BMSType, string BMSVersion)
+        //{
+        //    BMS bms = new BMS(bmsID,BMSType, BMSVersion);
 
-            return bms;
-        }
+        //    return bms;
+        //}
 
-        public void SaveBMS(BMS bms)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
+        //public void SaveBMS(BMS bms)
+        //{
+        //    using (SqlConnection connection = new SqlConnection(connectionString))
+        //    {
 
-                SqlCommand command = new SqlCommand("INSERT INTO BMS (bmsType, bmsVersion)" + "VALUES(@BMSType, @BMSVersion)", connection);
-                command.Parameters.AddWithValue("@BMSType", bms.BMSType);
-                command.Parameters.AddWithValue("@BMSVersion", bms.BMSVersion);
+        //        SqlCommand command = new SqlCommand("INSERT INTO BMS (bmsType, bmsVersion)" + "VALUES(@BMSType, @BMSVersion)", connection);
+        //        command.Parameters.AddWithValue("@BMSType", bms.BMSType);
+        //        command.Parameters.AddWithValue("@BMSVersion", bms.BMSVersion);
 
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
+        //        connection.Open();
+        //        command.ExecuteNonQuery();
+        //        connection.Close();
 
-            }
-        }
+        //    }
+        //}
 
 
         public BMSViewModel()

@@ -40,6 +40,26 @@ namespace Lithium_Balance.Models
         {
         }
 
+        public string ToSql()
+        {
+            return $"{OrderNumber},'{CompanyName}','{Email},'{BMSType},'{BMSVersion},'{SoftwareVersion},'{SoftwareType},'{LicenseDuration},'{Address},'{Date}";
+        }
+
+        public Order ToOrders()
+        {
+            return new Order(OrderNumber, CompanyName, Email, BMSType, BMSVersion, SoftwareVersion, SoftwareType, LicenseDuration, Address, Date);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
+
+
         /*
         ============================================================================================
              Commented out for now, this shouldn't relevant in Model, but in ViewModel instead

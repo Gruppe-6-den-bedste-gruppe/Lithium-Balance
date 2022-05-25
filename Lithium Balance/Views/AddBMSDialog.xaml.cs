@@ -20,15 +20,29 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddBMSDialog : Window
     {
-        private readonly BMSViewModel bMSViewModel = new();
+        private BMSViewModel bMSViewModel = new();
+
+        public BMSViewModel BMSViewModel
+        {
+            get
+            {
+                return bMSViewModel;
+            }
+            set
+            {
+                bMSViewModel = value;
+            }
+        }
         public AddBMSDialog()
         {
+            DataContext = BMSViewModel;
             InitializeComponent();
+          
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            bMSViewModel.SaveBMS(bMSViewModel.CreateBMS(ABBMSType.Text, ABBMSType.Text, ABBMSVersion.Text));
+            //bMSViewModel.SaveBMS(bMSViewModel.CreateBMS(ABBMSType.Text, ABBMSType.Text, ABBMSVersion.Text));
             DialogResult = true;
         }
         private void CancelButton_Click(object sender, RoutedEventArgs e)

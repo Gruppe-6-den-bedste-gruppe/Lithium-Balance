@@ -24,6 +24,7 @@ namespace Lithium_Balance.Views
         public AddSoftwareDialog()
         {
             InitializeComponent();
+            DataContext = softwareViewModel;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)

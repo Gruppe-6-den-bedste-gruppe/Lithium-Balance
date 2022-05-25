@@ -23,11 +23,13 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddOrderDialog : Window
     {
-        private OrderViewModel orderViewModel = new();
+        //private OrderViewModel orderViewModel = new();
         //private readonly MainWindowViewModel mvm = new();
         //public string SelectedValue { get; set; }
 
-        
+
+        private OrderViewModel orderViewModel = new();
+
         public OrderViewModel OrderViewModel
         {
             get
@@ -39,6 +41,8 @@ namespace Lithium_Balance.Views
                 orderViewModel = value;
             }
         }
+
+
         public AddOrderDialog()
         {
 
@@ -61,11 +65,12 @@ namespace Lithium_Balance.Views
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            DialogResult = true;
         }
 
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
+        
         {
             DialogResult = false;
         }
