@@ -20,19 +20,6 @@ namespace Lithium_Balance.Models
             BMSVersion = bmsVersion;
 
         }
-
-        public void Parse(string line)
-        {
-            string[] data = line.Split(';');
-            BMSType = data[0];
-            BMSVersion = data[1];
-
-        }
-
-        public string Format()
-        {
-            return $"{BMSType};{BMSVersion}";
-        }
     }
 
 }

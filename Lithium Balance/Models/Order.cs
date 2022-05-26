@@ -38,25 +38,5 @@ namespace Lithium_Balance.Models
         public Order()
         {
         }
-
-        //public void Parse(string line)
-        //{
-        //    string[] data = line.Split(';');
-        //    OrderNumber = data[0];
-        //    CompanyName = data[1];
-        //    LicenseDuration = data[3];
-        //    Date = data[4];
-        //    Email = data[5];
-        //    Address = data[6];
-        //    BMSType = data[7];
-        //    BMSVersion = data[8];
-        //    SoftwareVersion = data[9];
-        //    SoftwareType = data[10];
-        //}
-
-        //public string Format()
-        //{
-        //    return $"{OrderNumber};{CompanyName};{Receiver};{LicenseDuration};{Date};{Email};{Address};{BMSType};{BMSVersion};{SoftwareVersion},{SoftwareType}";
-        //}
     }
 }

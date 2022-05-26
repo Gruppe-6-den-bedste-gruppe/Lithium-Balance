@@ -25,7 +25,6 @@ namespace Lithium_Balance.Views
     public partial class AddOrderDialog : Window
     {
         private readonly OrderViewModel orderViewModel = new();
-        private readonly MainWindowViewModel mvm = new();
         public string SelectedValue { get; set; }
         
 
