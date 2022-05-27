@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Lithium_Balance.Views;
+using Lithium_Balance.ViewModels;
+using Lithium_Balance.Models;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Lithium_Balance.Views
 {
@@ -20,13 +24,23 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddOrderDialog : Window
     {
+        private readonly OrderViewModel orderViewModel = new();
+        public string SelectedValue { get; set; }
+        
+
         public AddOrderDialog()
         {
+
             InitializeComponent();
+
         }
+
+
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            
+            orderViewModel.SaveOrder(orderViewModel.CreateOrder(OrderNumber.Text, CompanyName.Text, Email.Text, BMSType.Text, BMSVersion.Text, SoftwareType.Text, SoftwareVersion.Text, LicenseDuration.Text, Address.Text, Date.ToString()));
             DialogResult = true;
         }
 

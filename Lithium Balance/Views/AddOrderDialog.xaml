@@ -4,64 +4,59 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lithium_Balance.Views"
+        xmlns:viewmodel="clr-namespace:Lithium_Balance.ViewModels"
         mc:Ignorable="d"
-        Title="Tilføj ny ordre" SizeToContent="Height" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+        Title="Add new order" SizeToContent="Height" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Window.Resources>
+    </Window.Resources>
     <StackPanel Margin="5">
         <DockPanel>
-            <Label Content="File Status"/>
-            <TextBox Text="{Binding FileStatus}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <Label Content="Order Number"/>
+            <TextBox Name="OrderNumber" Text="{Binding OrderNumber}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
-            <Label Content="Ordre Nr"/>
-            <TextBox Text="{Binding OrderNumber}" Width="120" HorizontalAlignment="Right" Margin="5"/>
-        </DockPanel>
-        <DockPanel>
-            <Label Content="Kunde"/>
-            <TextBox Text="{Binding Customer}" Width="120" HorizontalAlignment="Right" Margin="5"/>
-        </DockPanel>
-        <DockPanel>
-            <Label Content="Firma Navn"/>
-            <TextBox Text="{Binding CompanyName}" Width="120" HorizontalAlignment="Right" Margin="5"/>
-        </DockPanel>
-        <DockPanel>
-            <Label Content="Modtager"/>
-            <TextBox Text="{Binding Receiver}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <Label Content="Company Name"/> 
+            <ComboBox Name="CompanyName"  Width="120" HorizontalAlignment="Right" Margin="5" ItemsSource="{Binding CompanyName.OrdersCollection}" DisplayMemberPath="CompanyName" SelectionChanged="CompanyName_SelectionChanged" >
+            </ComboBox>
         </DockPanel>
         <DockPanel>
             <Label Content="Email"/>
-            <TextBox Text="{Binding Email}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Name="Email" Text="{Binding Email}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
             <Label Content="BMS Type"/>
-            <ComboBox Width="120" Margin="5" HorizontalAlignment="Right" SelectedIndex="{Binding BMSType}">
-                <ComboBoxItem Content="s-BMS"/>
-                <ComboBoxItem Content="c-BMS"/>
-                <ComboBoxItem Content="n-BMS"/>
-            </ComboBox>
+            <ComboBox Name="BMSType" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding BMSType.OrdersCollection}" DisplayMemberPath="BMSType"/>
+
+        </DockPanel>
+        <DockPanel>
+            <Label Content="BMS Version"/>
+            <ComboBox Name="BMSVersion" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding mvm.OrdersCollection}" DisplayMemberPath="BmsVersion"/>
+
         </DockPanel>
         <DockPanel>
             <Label Content="Software Type"/>
-            <ComboBox Width="120" Margin="5" HorizontalAlignment="Right" SelectedIndex="{Binding SoftwareType}">
-                <ComboBoxItem Content="v2.2.2"/>
-                <ComboBoxItem Content="v2.4.0"/>
-                <ComboBoxItem Content="v2.5.0"/>
-            </ComboBox>
+            <ComboBox Name="SoftwareType" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding SoftwareType.OrdersCollection}" DisplayMemberPath="SoftwareType"/>
+
         </DockPanel>
         <DockPanel>
             <Label Content="Software Version"/>
-            <ComboBox Width="120" Margin="5" HorizontalAlignment="Right" SelectedIndex="{Binding SoftwareVersion}">
-                <ComboBoxItem Content="2.2.2"/>
-                <ComboBoxItem Content="2.4.0"/>
-                <ComboBoxItem Content="2.5.0"/>
-            </ComboBox>
+            <ComboBox Name="SoftwareVersion" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding SoftwareVersion.OrdersCollection}" DisplayMemberPath="SoftwareVersion"/>
         </DockPanel>
         <DockPanel>
-            <Label Content="Licens varighed"/>
-            <TextBox Text="{Binding LicensDuration}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <Label Content="License Duration"/>
+            <TextBox Name="LicenseDuration" Text="{Binding LicensDuration}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+        </DockPanel>
+        <DockPanel>
+            <Label Content="Address"/>
+            <TextBox Name="Address" Text="{Binding Address}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+        </DockPanel>
+        <DockPanel>
+            <Label Content="Date"/>
+            <DatePicker Name="Date" SelectedDate="{Binding Date}" Width="120" HorizontalAlignment="Right" Margin="5" />
         </DockPanel>
         <DockPanel HorizontalAlignment="Right">
-            <Button x:Name="SaveButton" Content="Gem" Width="70" Height="23" Margin="5" Click="SaveButton_Click"/>
-            <Button x:Name="CancelButtton" Content="Annullér" Width="70" Height="23" Margin="5" Click="CancelButton_Click"/>
+            <Button x:Name="SaveButton" Content="Save" Width="70" Height="23" Margin="5" Click="SaveButton_Click"/>
+            <Button x:Name="CancelButtton" Content="Cancel" Width="70" Height="23" Margin="5" Click="CancelButton_Click"/>
         </DockPanel>
     </StackPanel>
 </Window>

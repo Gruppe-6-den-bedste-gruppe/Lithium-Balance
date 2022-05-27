@@ -10,5 +10,15 @@ namespace Lithium_Balance.Models
 {
     public class Customer
     {
+        public String CompanyName { get; set; }
+        public String Address { get; set; }
+        public String Email { get; set; }
+
+        public Customer(string CompanyName, string Address, string Email)
+        {
+            this.CompanyName = CompanyName;
+            this.Address = Address;
+            this.Email = Email;
+        }
     }
 }

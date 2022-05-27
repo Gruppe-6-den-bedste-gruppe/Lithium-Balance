@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Lithium_Balance.Models;
 using Lithium_Balance.Views;
+using Lithium_Balance.ViewModels;
 using System.IO;
 
 namespace Lithium_Balance.Views
@@ -22,13 +23,30 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly MainWindowViewModel mvm;
 
         public MainWindow()
-        {       
+        {
+            mvm = new MainWindowViewModel();
             InitializeComponent();
+            DataContext = mvm;
+            Orders.ItemsSource = mvm.OrdersCollection;
+            Customers.ItemsSource = mvm.OrdersCollection;
+            BMS.ItemsSource = mvm.OrdersCollection;
+            Software.ItemsSource = mvm.OrdersCollection;
+
+
+
         }
 
-       
+
+        private void AddOrder_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddOrderDialog dialog = new();
+
+            dialog.ShowDialog();
+        }
+
         private void AddCustomer_Click(object sender, RoutedEventArgs e)
         {
             AddCustomerDialog dialog = new();
@@ -51,15 +69,6 @@ namespace Lithium_Balance.Views
         }
 
 
-        private void AddOrder_Click(object sender, RoutedEventArgs e)
-        {
-            AddOrderDialog dialog = new();
-
-            dialog.ShowDialog();
-
-
-        }
-
         private void UpdateOrder_Click(object sender, RoutedEventArgs e)
         {
             UpdateOrderDialog dialog = new();
@@ -67,6 +76,31 @@ namespace Lithium_Balance.Views
             dialog.ShowDialog();
              
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+           
+
+        }
+
+        private void Update_Click_1(object sender, RoutedEventArgs e)
+        {
+            mvm.ShowOrders();
+            
+
+
+        }
+
+
+
+        
+
+
 
         //private void DeleteOrder_Click(object sender, RoutedEventArgs e)
         //{

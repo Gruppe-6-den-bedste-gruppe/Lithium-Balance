@@ -10,5 +10,16 @@ namespace Lithium_Balance.Models
 {
     public class Software
     {
+
+        public string SoftwareType { get; set; }
+        public string SoftwareVersion { get; set; }
+
+        public Software(string softwareType, string softwareVersion)
+        {
+            SoftwareType = softwareType;
+            SoftwareVersion = softwareVersion;
+
+        }
     }
+
 }

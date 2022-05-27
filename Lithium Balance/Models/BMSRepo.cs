@@ -10,5 +10,9 @@ namespace Lithium_Balance.Models
 {
     public class BMSRepo
     {
+        public BMSRepo()
+        {
+
+        }
     }
 }

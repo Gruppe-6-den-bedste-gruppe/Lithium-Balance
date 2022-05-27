@@ -5,15 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lithium_Balance.Views"
         mc:Ignorable="d"
-        Title="Tilføj ny kunde" SizeToContent="Height" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+        Title="Add a new customer" SizeToContent="Height" Width="300" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <StackPanel Margin="5">
         <DockPanel>
-            <Label Content="Firma navn"/>
-            <TextBox Text="{Binding CompanyName}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <Label Content="Company name"/>
+            <TextBox Name="ACCompanyName" Text="{Binding CompanyName}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
             <Label Content="Email"/>
-            <TextBox Text="{Binding Email}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Name="ACEmail" Text="{Binding Email}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+        </DockPanel>
+        <DockPanel>
+            <Label Content="Address"/>
+            <TextBox Name="ACAddress" Text="{Binding Address}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Right">
+            <Button x:Name="SaveButton" Content="Save" Width="70" Height="23" Margin="5" Click="SaveButton_Click"/>
+            <Button x:Name="CancelButtton" Content="Cancel" Width="70" Height="23" Margin="5" Click="CancelButton_Click"/>
         </DockPanel>
     </StackPanel>
 </Window>
