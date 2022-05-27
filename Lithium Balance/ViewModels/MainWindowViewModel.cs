@@ -57,11 +57,7 @@ namespace Lithium_Balance.ViewModels
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("select orderNumber, date, licenseDuration, companyName," +
-                    " Email, Address, bmsType, bmsVersion, softwareType, softwareVersion from orders " +
-                    "join customer on customer.customerID = orders.customerID " +
-                    "join bms on bms.bmsID = orders.bmsID " +
-                    "join software on software.softwareID = orders.softwareID", connection);
+                SqlCommand command = new SqlCommand("select orderNumber, date, licenseDuration, companyName, Email, Address, bmsType, bmsVersion, softwareType, softwareVersion from orders join customer on customer.customerID = orders.customerID join bms on bms.bmsID = orders.bmsID join software on software.softwareID = orders.softwareID", connection);
 
                 using (SqlDataReader dr = command.ExecuteReader())
                 {
