@@ -16,7 +16,7 @@
         </DockPanel>
         <DockPanel>
             <Label Content="Company Name"/> 
-            <ComboBox Name="CompanyName"  Width="120" HorizontalAlignment="Right" Margin="5" ItemsSource="{Binding CompanyName.OrdersCollection}" DisplayMemberPath="CompanyName" SelectionChanged="CompanyName_SelectionChanged" >
+            <ComboBox Name="CompanyName"  Width="120" HorizontalAlignment="Right" Margin="5" ItemsSource="{Binding CompanyName.OrdersCollection}" DisplayMemberPath="CompanyName" >
             </ComboBox>
         </DockPanel>
         <DockPanel>
