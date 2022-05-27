@@ -11,9 +11,11 @@ namespace Lithium_Balance.ViewModels
     internal class OrderViewModel
     {
         private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
-        public Order CreateOrder(string OrderNumber, string CompanyName, string Email, string BMSType,string BMSVersion, string SoftwareVersion, string SoftwareType, string LicenseDuration, string Address, string Date)
+        public Order CreateOrder(string OrderNumber, string CompanyName, string Email, string BMSType,string BMSVersion,
+            string SoftwareVersion, string SoftwareType, string LicenseDuration, string Address, string Date)
         {
-            Order order = new Order(OrderNumber, CompanyName, Email, BMSType, BMSVersion, SoftwareVersion, SoftwareType, LicenseDuration , Address, Date);
+            Order order = new Order(OrderNumber, CompanyName, Email, BMSType, BMSVersion, 
+                SoftwareVersion, SoftwareType, LicenseDuration , Address, Date);
             
             return order;
         }
