@@ -29,7 +29,7 @@ namespace Lithium_Balance.Views
         //private readonly MainWindowViewModel mvm = new();
         //public string SelectedValue { get; set; }
 
-        
+
         public OrderViewModel OrderViewModel
         {
             get
@@ -41,10 +41,9 @@ namespace Lithium_Balance.Views
                 orderViewModel = value;
             }
         }
+
         public AddOrderDialog()
         {
-
-
             InitializeComponent();
             DataContext = OrderViewModel; //Binding View til Viewmodel. Hvis vi benyttede DataContex = this; er det fra View til View Binding
 
@@ -55,7 +54,7 @@ namespace Lithium_Balance.Views
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             
-            orderViewModel.SaveOrder(orderViewModel.CreateOrder(OrderNumber.Text, CompanyName.Text, Email.Text, BMSType.Text, BMSVersion.Text, SoftwareType.Text, SoftwareVersion.Text, LicenseDuration.Text, Address.Text, Date.ToString()));
+            //orderViewModel.SaveOrder(orderViewModel.CreateOrder(OrderNumber.Text, CompanyName.Text, Email.Text, BMSType.Text, BMSVersion.Text, SoftwareType.Text, SoftwareVersion.Text, LicenseDuration.Text, Address.Text, Date.ToString()));
             DialogResult = true;
         }
 

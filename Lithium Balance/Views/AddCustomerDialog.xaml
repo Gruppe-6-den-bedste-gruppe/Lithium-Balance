@@ -9,15 +9,15 @@
     <StackPanel Margin="5">
         <DockPanel>
             <Label Content="Company name"/>
-            <TextBox Name="ACCompanyName" Text="{Binding CompanyName}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Text="{Binding CompanyName}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
             <Label Content="Email"/>
-            <TextBox Name="ACEmail" Text="{Binding Email}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Text="{Binding Email}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
             <Label Content="Address"/>
-            <TextBox Name="ACAddress" Text="{Binding Address}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Text="{Binding Address}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel HorizontalAlignment="Right">
             <Button x:Name="SaveButton" Content="Save" Width="70" Height="23" Margin="5" Click="SaveButton_Click"/>

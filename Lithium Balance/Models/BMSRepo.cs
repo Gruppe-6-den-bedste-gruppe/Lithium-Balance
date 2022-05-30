@@ -7,144 +7,67 @@ using Lithium_Balance.Views;
 using Lithium_Balance.Models;
 using System.Data.SqlClient;
 using Lithium_Balance.ViewModels;
+using System.Data;
 
 namespace Lithium_Balance.Models
 {
     public class BMSRepo
     {
 
-//        private Database db = new();
-//        private List<BMS> bMS = new();
+        private readonly Database db;
+        private List<BMS> BMSList;
 
-//        public BMSRepo()
-//        {
-//            bMS = GetAllBMS();
-//        }
+        private BMSRepo() // Constructor er private så man ikke kan lave flere instanser af BMSRepo.
+        {
+            BMSList = new List<BMS>();
+            using (SqlConnection connection = new(db.connectionString))
+            {
+                connection.Open();
+                string values = "bmsType, bmsVersion";
+                string table = "bms";
+                string CommandText = $"SELECT {values} FROM {table}";
+                SqlCommand sQLCommand = new(CommandText, connection);
+                using (SqlDataReader sqldatareader = sQLCommand.ExecuteReader())
+                {
+                    while (sqldatareader.Read() != false)
+                    {
+                        string BMSType = sqldatareader.GetString("bmsType");
+                        string BMSVersion = sqldatareader.GetString("bmsVersion");
+                        BMS bms = new(BMSType, BMSVersion);
+                        BMSList.Add(bms);
+                    }
+                }
+            }
+        }
 
-//        public List<BMS> GetAllBMS()
-//        {
+        public BMS Create(string BMSType, string BMSVersion)
+        {
+            BMS bms;
 
-//            List<BMS> result = new();
-//            if (db.connectionString is null)
-//            {
-//                return result;
-//            }
-//            using (SqlConnection connection = new(db.connectionString))
-//            {
-//                connection.Open();
+            using (SqlConnection connection = new(db.connectionString))
+            {
+                connection.Open();
 
-//                try
-//                {
-//                    SqlCommand sql = new(@"
-//                          SELECT * FROM bms", connection);
-//                    using (SqlDataReader DR = sql.ExecuteReader())
-//                    {
-//                        while (DR.Read())
-//                        {
-//                            result.Add(new BMS((string)DR[0], (string)DR[1], (string)DR[2]));
-//                        }
-//                    }
-//                }
-//                catch
-//                {
+                string table = "bms";
+                string coloumns = "bmsType, bmsVersion";
+                string values = "@bmsType, @bmsVersion";
+                string query = $"INSERT INTO {table} ({coloumns}) VALUES ({values}); SELECT SCOPE_IDENTITY()";
 
-//                    SqlCommand sql = new(@"
-//                            CREATE TABLE bms (
-//                                   bmsID INT  IDENTITY (1,1) IS NOT NULL,
-//                                   bmsType NVARCHAR,
-//                                   bmsVersion NVARCHAR) ", connection);
-//                    sql.ExecuteNonQuery();
-//                }
-//            }
-//            return result;
+                SqlCommand sqlCommand = new(query, connection);
 
-//        }
+                sqlCommand.Parameters.Add(new SqlParameter("bmsType", BMSType));
+                sqlCommand.Parameters.Add(new SqlParameter("bmsVersion", BMSVersion));
 
-//        public bool Add(BMS bms)
-//        {
-//            bool result = false;
+                bms = new(BMSType,BMSVersion);
+            }
 
-//            using (SqlConnection connection = new(db.connectionString))
-//            {
+            return bms;
+        }
 
-
-//                try
-//                {
-//                    connection.Open();
-//                    string saveBMS = @"
-//                        INSERT INTO bms (
-//                            bmsType,
-//                            bmsVersion,
-//                        ) VALUES ("; // VERBATIM STRING - SO CANT USE CONCATION TO JOIN SENTENCES - MIGHT USE REPLACE THO?
-//                    saveBMS += bms.ToSql();
-//                    saveBMS += ");";
-//                    SqlCommand sql = new(saveBMS, connection);
-//                    sql.ExecuteNonQuery();
-//                    bms.Add(bms.ToBMS());
-//                    result = true;
-//                }
-//                catch
-//                {
-//                    result = false;
-//                }
-//            }
-//            return result;
-//        }
-
-//        public bool Add(BMSViewModel bms)
-//        {
-//            bool result = false;
-//            // I DONT GET WHY YOU GET AN INT BACK? IS IT THE INDEX INSIDE OUR LIST?
-//            using (SqlConnection connection = new(db.connectionString))
-//            {
-//                try
-//                {
-//                    connection.Open();
-//                    string saveBMS = @"
-//                        INSERT INTO calipers (
-//                            bmsType,
-//                            bmsVersion,
-
-//                        ) VALUES ("; // VERBATIM STRING - SO CANT USE CONCATION TO JOIN SENTENCES - MIGHT USE REPLACE THO?
-//                    saveBMS += bms.ToSql();
-//                    saveBMS += ");";
-//                    SqlCommand sql = new(saveBMS, connection);
-//                    sql.ExecuteNonQuery();
-//                    bms.Add(bms.ToBMS());
-//                    result = true;
-//                }
-//                catch
-//                {
-//                    result = false;
-//                }
-//            }
-//            return result;
-//        }
-
-//        public BMS GetById(int id)
-//        {
-//            BMS result = null;
-//            using (SqlConnection connection = new(db.connectionString))
-//            {
-//                try
-//                {
-//                    connection.Open();
-//                    string sqlString = "SELECT * FROM bms WHERE bms = " + id + ";";
-//                    SqlCommand sql = new(sqlString, connection);
-//                    using (SqlDataReader DR = sql.ExecuteReader())
-//                    {
-//                        while (DR.Read())
-//                        {
-//                            result.Add(new BMS((string)DR[0], (string)DR[1], (string)DR[2]));
-//                        }
-//                    }
-//                }
-//                catch
-//                {
-//                    result = null;
-//                }
-//            }
-//            return result;
-//        }
+        public List<BMS> GetAll()
+        {
+            return BMSList;
+        }
     }
 }
+

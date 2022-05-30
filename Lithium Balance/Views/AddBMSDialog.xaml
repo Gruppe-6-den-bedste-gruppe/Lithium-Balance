@@ -9,11 +9,11 @@
     <StackPanel Margin="5">
         <DockPanel>
             <Label Content="BMS Type"/>
-            <TextBox Name="ABBMSType" Text="{Binding BMSType}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Text="{Binding BMSType}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel>
             <Label Content="BMS Version"/>
-            <TextBox Name="ABBMSVersion" Text="{Binding BMSVersion}" Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <TextBox Text="{Binding BMSVersion}" Width="120" HorizontalAlignment="Right" Margin="5"/>
         </DockPanel>
         <DockPanel HorizontalAlignment="Right">
             <Button x:Name="SaveButton" Content="Save" Width="70" Height="23" Margin="5" Click="SaveButton_Click"/>

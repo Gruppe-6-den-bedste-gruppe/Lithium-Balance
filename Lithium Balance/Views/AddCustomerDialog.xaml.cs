@@ -29,7 +29,7 @@ namespace Lithium_Balance.Views
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            customerViewModel.SaveCustomer(customerViewModel.CreateCustomer(ACCompanyName.Text, ACEmail.Text, ACAddress.Text));
+            //customerViewModel.SaveCustomer(customerViewModel.CreateCustomer(ACCompanyName.Text, ACEmail.Text, ACAddress.Text));
             DialogResult = true;
         }
 
