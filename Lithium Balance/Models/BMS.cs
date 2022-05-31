@@ -23,6 +23,11 @@ namespace Lithium_Balance.Models
 
         }
 
+        public BMS()
+        {
+
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void NotifyPropertyChanged(string propertyName)

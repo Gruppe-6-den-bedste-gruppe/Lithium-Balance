@@ -26,12 +26,12 @@
         </DockPanel>
         <DockPanel>
             <Label Content="BMS Type"/>
-            <ComboBox Name="BMSType" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding bmsViewModel}" SelectedItem="{Binding BMSType}" DisplayMemberPath="BMSType"/>
+            <ComboBox Name="BMSType" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding OrderViewModel}" SelectedItem="{Binding Order}" DisplayMemberPath="BMSType"/>
 
         </DockPanel>
         <DockPanel>
             <Label Content="BMS Version"/>
-            <ComboBox Name="BMSVersion" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding bmsViewModel}" SelectedItem="{Binding BMSVersion}" DisplayMemberPath="BMSVersion"/>
+            <ComboBox Name="BMSVersion" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding OrderViewModel}" SelectedItem="{Binding BMSVersion}" DisplayMemberPath="BMSVersion"/>
 
         </DockPanel>
         <DockPanel>

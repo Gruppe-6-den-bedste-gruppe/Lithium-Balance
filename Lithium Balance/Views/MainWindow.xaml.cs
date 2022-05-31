@@ -89,13 +89,13 @@ namespace Lithium_Balance.Views
 
         }
 
-        private void Update_Click_1(object sender, RoutedEventArgs e)
-        {
-            mvm.GetOrderInfo();
+        //private void Update_Click_1(object sender, RoutedEventArgs e)
+        //{
+        //    mvm.GetOrderInfo();
             
 
 
-        }
+        //}
 
 
 

@@ -13,14 +13,15 @@ namespace Lithium_Balance.Models
 {
     public class BMSRepo
     {
+        private readonly string connectionString = $"Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
 
-        private readonly Database db;
         private List<BMS> BMSList;
+
 
         private BMSRepo() // Constructor er private så man ikke kan lave flere instanser af BMSRepo.
         {
             BMSList = new List<BMS>();
-            using (SqlConnection connection = new(db.connectionString))
+            using (SqlConnection connection = new(connectionString))
             {
                 connection.Open();
                 string values = "bmsType, bmsVersion";
@@ -44,7 +45,7 @@ namespace Lithium_Balance.Models
         {
             BMS bms;
 
-            using (SqlConnection connection = new(db.connectionString))
+            using (SqlConnection connection = new(connectionString))
             {
                 connection.Open();
 

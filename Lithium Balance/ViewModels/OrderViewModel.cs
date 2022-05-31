@@ -12,7 +12,8 @@ namespace Lithium_Balance.ViewModels
 {
     public class OrderViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<BMS> BMSList { get; set; }
+        public ObservableCollection<Order> OrderList { get; set; }
+        
 
         public string OrderNumber { get; set; }
         public string CompanyName { get; set; }
@@ -36,12 +37,28 @@ namespace Lithium_Balance.ViewModels
             Email = order.Email;
             Address = order.Address;
             BMSType = order.BMSType;
+            BMSVersion = order.BMSVersion;
             SoftwareVersion = order.SoftwareVersion;
             SoftwareType = order.SoftwareType;
         }
 
         public OrderViewModel()
         {
+        }
+
+        public OrderViewModel( string OrderNumber, string CompanyName, string LicenseDuration, string Date, string Email, string Address, string BMSType, string BMSVersion, string SoftwareType, string SoftwareVersion)
+        {
+            this.OrderNumber = OrderNumber;
+            this.CompanyName = CompanyName;
+            this.LicenseDuration = LicenseDuration;
+            this.Date = Date;
+            this.Email = Email;
+            this.Address = Address;
+            this.BMSType = BMSType;
+            this.BMSVersion = BMSVersion;
+            this.SoftwareType = SoftwareType;
+            this.SoftwareVersion = SoftwareVersion;
+
         }
         
         public event PropertyChangedEventHandler PropertyChanged;

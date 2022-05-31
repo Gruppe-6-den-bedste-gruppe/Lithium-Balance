@@ -10,7 +10,7 @@ namespace Lithium_Balance.Models
 {
     public class OrderRepo
     {
-        private readonly Database db;
+        private readonly string connectionString = $"Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";
 
         private List<Order> OrderList;
 
@@ -18,7 +18,7 @@ namespace Lithium_Balance.Models
         private OrderRepo() // Constructor er private så man ikke kan lave flere instanser af OrderRepo.
         {
             OrderList = new List<Order>();
-            using (SqlConnection connection = new(db.connectionString))
+            using (SqlConnection connection = new(connectionString))
             {
                 connection.Open();
                 string values = "orderNumber, companyName, email, bmsType, bmsVersion, softwareVersion, softwareType, licenseDuration, address, date";
@@ -55,7 +55,7 @@ namespace Lithium_Balance.Models
         {
             Order order;
 
-            using (SqlConnection connection = new(db.connectionString))
+            using (SqlConnection connection = new(connectionString))
             {
                 connection.Open();
 

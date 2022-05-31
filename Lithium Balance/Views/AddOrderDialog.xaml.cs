@@ -25,27 +25,22 @@ namespace Lithium_Balance.Views
     /// </summary>
     public partial class AddOrderDialog : Window
     {
-        private OrderViewModel orderViewModel = new();
+        //private OrderViewModel orderViewModel;
+        public ObservableCollection<OrderViewModel> OrderViewModel { get; set; }
+        public Order SelectedOrder { get; set; }
+
         //private readonly MainWindowViewModel mvm = new();
         //public string SelectedValue { get; set; }
 
 
-        public OrderViewModel OrderViewModel
-        {
-            get
-            {
-                return orderViewModel;
-            }
-            set
-            {
-                orderViewModel = value;
-            }
-        }
+
 
         public AddOrderDialog()
         {
+            OrderViewModel = new ObservableCollection<OrderViewModel>();
             InitializeComponent();
-            DataContext = OrderViewModel; //Binding View til Viewmodel. Hvis vi benyttede DataContex = this; er det fra View til View Binding
+            DataContext = this; //Binding View til Viewmodel. Hvis vi benyttede DataContex = this; er det fra View til View Binding
+
 
 
         }
