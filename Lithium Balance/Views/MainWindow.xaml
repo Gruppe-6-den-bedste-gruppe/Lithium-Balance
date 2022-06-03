@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lithium_Balance.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1000">
+        Title="MainWindow" Height="450" Width="1250">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Padding" Value="4"/>
@@ -36,7 +36,6 @@
                             <GridViewColumn Header="Software Version" Width="100" DisplayMemberBinding="{Binding SoftwareVersion}" />
                             <GridViewColumn Header="Software Type" Width="100" DisplayMemberBinding="{Binding SoftwareType}" />
                             <GridViewColumn Header="License Duration" Width="100" DisplayMemberBinding="{Binding LicenseDuration}" />
-
                         </GridView>
                     </ListView.View>
                 </ListView>
