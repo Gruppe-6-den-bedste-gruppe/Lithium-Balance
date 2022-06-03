@@ -27,6 +27,7 @@ namespace Lithium_Balance.Views
     {
         //private OrderViewModel orderViewModel;
         public ObservableCollection<OrderViewModel> OrderViewModel { get; set; }
+        private readonly OrderViewModel orderViewModel = new();
         private OrderViewModel OVM;
 
         //private readonly MainWindowViewModel mvm = new();
@@ -54,7 +55,7 @@ namespace Lithium_Balance.Views
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             
-            //OrderViewModel.SaveOrder(OrderViewModel.CreateOrder(OrderNumber.Text, CompanyName.Text, Email.Text, BMSType.Text, BMSVersion.Text, SoftwareType.Text, SoftwareVersion.Text, LicenseDuration.Text, Address.Text, Date.ToString()));
+            orderViewModel.SaveOrder(orderViewModel.CreateOrder(OrderNumber.Text, CompanyName.Text, Email.Text, BMSType.Text, BMSVersion.Text, SoftwareType.Text, SoftwareVersion.Text, LicenseDuration.Text, Address.Text, Date.ToString()));
             DialogResult = true;
         }
 
