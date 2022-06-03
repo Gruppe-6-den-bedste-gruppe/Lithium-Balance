@@ -41,7 +41,6 @@ namespace Lithium_Balance.Views
             OVM = new OrderViewModel();
             InitializeComponent();
             DataContext = OVM; //Binding View til Viewmodel. Hvis vi benyttede DataContex = this; er det fra View til View Binding
-            CompanyName.ItemsSource = OVM.OrdersCollection;
             BMSType.ItemsSource = OVM.OrdersCollection;
             BMSVersion.ItemsSource = OVM.OrdersCollection;
             SoftwareType.ItemsSource = OVM.OrdersCollection;
