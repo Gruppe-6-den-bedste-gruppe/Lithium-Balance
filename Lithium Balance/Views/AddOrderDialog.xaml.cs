@@ -27,7 +27,7 @@ namespace Lithium_Balance.Views
     {
         //private OrderViewModel orderViewModel;
         public ObservableCollection<OrderViewModel> OrderViewModel { get; set; }
-        public Order SelectedOrder { get; set; }
+        private OrderViewModel OVM;
 
         //private readonly MainWindowViewModel mvm = new();
         //public string SelectedValue { get; set; }
@@ -37,9 +37,14 @@ namespace Lithium_Balance.Views
 
         public AddOrderDialog()
         {
-            OrderViewModel = new ObservableCollection<OrderViewModel>();
+            OVM = new OrderViewModel();
             InitializeComponent();
-            DataContext = this; //Binding View til Viewmodel. Hvis vi benyttede DataContex = this; er det fra View til View Binding
+            DataContext = OVM; //Binding View til Viewmodel. Hvis vi benyttede DataContex = this; er det fra View til View Binding
+            CompanyName.ItemsSource = OVM.OrdersCollection;
+            BMSType.ItemsSource = OVM.OrdersCollection;
+            BMSVersion.ItemsSource = OVM.OrdersCollection;
+            SoftwareType.ItemsSource = OVM.OrdersCollection;
+            SoftwareVersion.ItemsSource = OVM.OrdersCollection;
 
 
 
@@ -49,7 +54,7 @@ namespace Lithium_Balance.Views
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             
-            //orderViewModel.SaveOrder(orderViewModel.CreateOrder(OrderNumber.Text, CompanyName.Text, Email.Text, BMSType.Text, BMSVersion.Text, SoftwareType.Text, SoftwareVersion.Text, LicenseDuration.Text, Address.Text, Date.ToString()));
+            //OrderViewModel.SaveOrder(OrderViewModel.CreateOrder(OrderNumber.Text, CompanyName.Text, Email.Text, BMSType.Text, BMSVersion.Text, SoftwareType.Text, SoftwareVersion.Text, LicenseDuration.Text, Address.Text, Date.ToString()));
             DialogResult = true;
         }
 
