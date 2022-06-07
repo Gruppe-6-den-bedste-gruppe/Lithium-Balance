@@ -17,7 +17,7 @@
         </DockPanel>
         <DockPanel>
             <Label Content="Company Name"/>
-            <TextBox Name="CompanyName" Text="{Binding CompanyName}"  Width="120" HorizontalAlignment="Right" Margin="5"/>
+            <ComboBox Name="CompanyName" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding OrderViewModel}" SelectedItem="{Binding CompanyName}" DisplayMemberPath="CompanyName"/>
         </DockPanel>
         <DockPanel>
             <Label Content="Email"/>
@@ -26,7 +26,6 @@
         <DockPanel>
             <Label Content="BMS Type"/>
             <ComboBox Name="BMSType" Width="120" Margin="5" HorizontalAlignment="Right" ItemsSource="{Binding OrderViewModel}" SelectedItem="{Binding Order}" DisplayMemberPath="BMSType"/>
-
         </DockPanel>
         <DockPanel>
             <Label Content="BMS Version"/>

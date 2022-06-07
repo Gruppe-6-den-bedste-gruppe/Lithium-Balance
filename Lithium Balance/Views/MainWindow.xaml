@@ -36,7 +36,6 @@
                             <GridViewColumn Header="Software Version" Width="100" DisplayMemberBinding="{Binding SoftwareVersion}" />
                             <GridViewColumn Header="Software Type" Width="100" DisplayMemberBinding="{Binding SoftwareType}" />
                             <GridViewColumn Header="License Duration" Width="100" DisplayMemberBinding="{Binding LicenseDuration}" />
-
                         </GridView>
                     </ListView.View>
                 </ListView>
