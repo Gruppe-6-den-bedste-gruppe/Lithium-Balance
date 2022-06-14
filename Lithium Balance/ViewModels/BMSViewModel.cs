@@ -38,7 +38,7 @@ namespace Lithium_Balance.ViewModels
                 command.ExecuteNonQuery();
                 //* vi lukker databasen 
                 connection.Close();
-
+                //* hej ahmed
             }
         }
 
