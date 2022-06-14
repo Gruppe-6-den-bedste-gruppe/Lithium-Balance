@@ -16,16 +16,24 @@ namespace Lithium_Balance.ViewModels
 {
     public class MainWindowViewModel
     {
+
         private readonly string connectionString = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06";        
+        //* vi laver en liste der hedder OrderList hvor vi tager oplysnnger <order> fra order klassen i models. vi instanser ny order list
         public List<Order> OrdersList = new();
+        //* vi laver en oberservableCollection order, hvor vi opretter en ny orderCollection.
         public ObservableCollection<Order> OrdersCollection = new();
-      
+
+        //* Vi opretter en metode. 
         public MainWindowViewModel()
         {
+            //* når vi instanser en ny ordercollection, så opretter vi en ny oberservablecollection derindholder oplysninger fra orderlist.
+
             OrdersCollection = new ObservableCollection<Order>(OrdersList);
+            //* ShowOrders metode 
             ShowOrders();
+            //* vi opretter en For loop, hvor vi starter med at sige, int er lig med 0. så længe i er mindre end orderlist.count (count det antal der er i listen af order) derefter gør vi i en gang større, som er en condition. 
             for (int i = 0; i < OrdersList.Count; i++)
-            {
+            {   //* vi tilfæjer til Orderscollection
                 OrdersCollection.Add(OrdersList[i]);
             }
         }
@@ -35,7 +43,7 @@ namespace Lithium_Balance.ViewModels
 
         
 
-
+        //* det er  en tjek metode for at tjekke om vi er connctede til databasen. men vi bruger det ikke. 
         public bool IsDbConnected()
         {
             string connectionStringLowTimeout = "Server=10.56.8.36;Database=PEDB06;User Id=PE-06;Password=OPENDB_06;Connect Timeout=1";
@@ -51,7 +59,7 @@ namespace Lithium_Balance.ViewModels
             }
         }
 
-
+        //* 
         public List<Order> ShowOrders()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
