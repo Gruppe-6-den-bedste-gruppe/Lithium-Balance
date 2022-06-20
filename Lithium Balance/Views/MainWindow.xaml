@@ -51,7 +51,7 @@
                 <ListView Margin="10" Name="Customers">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Date"  Width="120" DisplayMemberBinding="{Binding Date}"/>
+                            <GridViewColumn Header="Address"  Width="120" DisplayMemberBinding="{Binding Address}"/>
                             <GridViewColumn Header="Company Name"  Width="120" DisplayMemberBinding="{Binding CompanyName}"/>
                             <GridViewColumn Header="Email"  Width="120" DisplayMemberBinding="{Binding Email}"/>
                         </GridView>

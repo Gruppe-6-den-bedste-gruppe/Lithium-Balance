@@ -21,22 +21,22 @@ namespace Lithium_Balance.Views
     public partial class AddBMSDialog : Window
     {
 
-        public BMSViewModel bMSViewModel
-        {
-            get
-            {
-                return bMSViewModel;
-            }
-            set
-            {
-                bMSViewModel = value;
-            }
-        }
+        //public BMSViewModel bMSViewModel
+        //{
+        //    get
+        //    {
+        //        return bMSViewModel;
+        //    }
+        //    set
+        //    {
+        //        bMSViewModel = value;
+        //    }
+        //}
 
         public AddBMSDialog()
         {
             InitializeComponent();
-            DataContext = bMSViewModel;
+            //DataContext = bMSViewModel;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
