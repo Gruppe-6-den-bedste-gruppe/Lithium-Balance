@@ -28,7 +28,7 @@
                             <GridViewColumn Header="Order Number" Width="100" DisplayMemberBinding="{Binding OrderNumber}" />
                             <GridViewColumn Header="Company Name" Width="100" DisplayMemberBinding="{Binding CompanyName}" />
                             <GridViewColumn Header="Date" Width="100" DisplayMemberBinding="{Binding Date}" />
-                            <GridViewColumn Header="Receiver" Width="100" DisplayMemberBinding="{Binding Receiver}" />
+                            <GridViewColumn Header="Responsible" Width="100" DisplayMemberBinding="{Binding Receiver}" />
                             <GridViewColumn Header="Email" Width="100" DisplayMemberBinding="{Binding Email}" />
                             <GridViewColumn Header="Address" Width="100" DisplayMemberBinding="{Binding Address}"/>
                             <GridViewColumn Header="BMS Type" Width="100" DisplayMemberBinding="{Binding BMSType}" />
